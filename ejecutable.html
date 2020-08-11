@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="eh.css">
+
+    <title>HERRAMIENTAS ESPECIALES</title>
+  </head>
+  <body bgcolor="FFCECB">
+
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand">
+        <img src="h.jpg" width="60" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+      </a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">CONITO MAMALÓN<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ARITO DE CEBOLLA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">OTRA HERRAMIENTA</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <br>
+
+    <form>
+      <div class="row col-md-10 ml-auto mr-auto">
+
+        <div class="col-md-6 ml-auto mr-auto">
+
+          <div class="row col-md-10 ml-auto mr-auto">
+            <p class="ml-auto mr-auto fontH0">Pieza</p>
+          </div>
+
+          <div class="form-group col-md-12">
+            <p class="fontH">Diametro:</p>
+            <input type="number" class="form-control" id="diametro" placeholder="0" min="0" max ="60">
+          </div>
+
+          <div class="form-group col-md-12">
+            <p class="fontH">Anchura:</p>
+            <select id="anchura1" class="form-control col-md-12">
+              <option selected value="0">Elige una</option>
+              <option value="1">1/8</option>
+              <option value="2">2/8</option>
+              <option value="3">3/8</option>
+              <option value="4">4/8</option>
+              <option value="5">5/8</option>
+              <option value="6">6/8</option>
+              <option value="7">7/8</option>
+              <option value="8">8/8</option>
+            </select>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <p class="fontH">Ángulo:</p>
+            <input type="number" class="form-control" id="angulo" placeholder="0" min="0" max ="180">
+          </div>
+
+          <div class="form-group col-md-12">
+            <p class="fontH">Cantidad de Diamante:</p>
+            <select id="diamante" class="form-control col-md-12">
+              <option selected value="0">Elige una</option>
+              <option value="100">100</option>
+              <option value="95">95</option>
+              <option value="90">90</option>
+              <option value="85">85</option>
+              <option value="80">80</option>
+              <option value="75">75</option>
+              <option value="70">70</option>
+              <option value="65">65</option>
+              <option value="60">60</option>
+              <option value="55">55</option>
+              <option value="50">50</option>
+              <option value="45">45</option>
+              <option value="40">40</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 ml-auto mr-auto">
+
+          <div class="row col-md-10 ml-auto mr-auto">
+            <p class="ml-auto mr-auto fontH0">Materiales</p>
+          </div>
+          
+          <br>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Bronce:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material1" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Cobalto:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material2" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Hierro:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material3" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Manganeso:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material4" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Niquel:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material5" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Zinc:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material6" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Grafito:</p>
+            <div class="col-6">
+              <input type="number" class="form-control" id="material7" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <button type="button" class="btn btn-danger float-right" style="align-items: right;" onclick="calcular()">Calcular</button>
+        </div>
+
+      </div>
+
+
+
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+      function calcular(){
+
+        if (validaciones()==0){
+
+/*DIAMETRO 1*/
+          var diametro = document.getElementById("diametro").value;
+/*RADIO 1*/
+          var radio = diametro / 2;
+
+          var angulo = document.getElementById("angulo").value;
+          var rad = (Math.PI * angulo ) / 180 ;
+          var anguloCal = Math.cos(rad);        
+/*HIPOTENUSA*/
+          var hipotenusa = radio / anguloCal;
+//          alert("H Hipotenusa: " + hipotenusa);
+
+/*BUJEROS*/
+          var bujeros = hipotenusa - 3 - 3;
+//          alert("H Largo cada bujero: " + bujeros);
+
+          var volumenBujeros = bujeros * 3 * 3;
+//          alert("H Volumen cada bujero: " + volumenBujeros);
+
+          var superBujeros = volumenBujeros * 3;
+//          alert("H Volumen de todos los bujeros: " + superBujeros);
+
+          var b2 = (hipotenusa*hipotenusa) - (radio*radio);
+/*ALTURA*/
+          var altura = Math.sqrt(b2);
+//        alert("H Altura: " + altura);
+
+          var anchura1 = document.getElementById("anchura1").value*1;
+          var aux = anchura1 * 3.175;
+
+/*ANCHURA*/
+          var anchura = aux;
+//        alert("H Anchura: " + anchura);
+
+/*VOLUMEN 1*/
+          var volumen1 = (Math.PI * radio * radio * altura) / 3;
+//        alert("H Volumen 1: " + volumen1);
+
+          var radio2 = radio - anchura;
+//        alert("H Radio 2: " + radio2);
+
+          var hipotenusa2 = radio2 / anguloCal;
+//        alert("H Hipotenusa 2: " + hipotenusa2);
+
+          b2 = (hipotenusa2*hipotenusa2) - (radio2*radio2);
+          var altura2 = Math.sqrt(b2);
+//        alert("H Altura 2: " + altura2);
+
+          var volumen2 = (Math.PI * radio2 * radio2 * altura2) / 3;
+//        alert("H Volumen 2: " + volumen2);
+
+          var volumenTotal = volumen1 - volumen2;
+//        alert("H Volumen Total: " + volumenTotal);
+
+
+          var diamanteForm = document.getElementById("diamante").value;
+          var diamante = (diamanteForm * 4.4) / 100;
+
+
+          var kilates = (volumenTotal * diamante) / 1000;
+//        alert("H Kilates: " + kilates);
+          var g0 = kilates/5;
+
+          var volumenX = kilates * 0.0571 * 1000;
+//        alert("H Volumen X: " + volumenX);
+
+          var vol2mm = volumenTotal - volumenX;
+//        alert("H Vol2mm: " + vol2mm);
+
+
+          var d0 = 0.0571;  //Diamante
+          var material0n = "Diamante";
+          var d1 = 8.5;  //bronce
+          var material1n = "Bronce";
+          var d2 = 8.9;  //cobalto
+          var material2n = "Cobalto";
+          var d3 = 7.84; //hierro
+          var material3n = "Hierro";
+          var d4 = 7.4;  //manganeso
+          var material4n = "Manganeso";
+          var d5 = 7.68; //niquel
+          var material5n = "Niquel";
+          var d6 = 7.14; //zinc
+          var material6n = "Zinc";
+          var d7 = 2.25; //grafito
+          var material7n = "Grafito";
+
+          var m1=0, m2=0, m3=0, m4=0, m5=0, m6=0, m7=0;
+
+          var porcent = 0;
+
+          for (var i = 1; i <= 7; i++) {
+            var materialForm = document.getElementById("material"+i).value * 1;
+            porcent=porcent+materialForm;
+          }
+
+          for (var i = 1; i <= 7; i++) {
+            var materialForm = document.getElementById("material"+i).value*1;
+            if (materialForm!=0){
+              if(i==1){ m1 = (d1 * vol2mm) / 100;  /*alert(m1 + " / " + material1n);*/}
+              if(i==2){ m2 = (d2 * vol2mm) / 100;  /*alert(m2 + " / " + material2n);*/}
+              if(i==3){ m3 = (d3 * vol2mm) / 100;  /*alert(m3 + " / " + material3n);*/}
+              if(i==4){ m4 = (d4 * vol2mm) / 100;  /*alert(m4 + " / " + material4n);*/}
+              if(i==5){ m5 = (d5 * vol2mm) / 100;  /*alert(m5 + " / " + material5n);*/}
+              if(i==6){ m6 = (d6 * vol2mm) / 100;  /*alert(m6 + " / " + material6n);*/}
+              if(i==7){ m7 = (d7 * vol2mm) / 100;  /*alert(m7 + " / " + material7n);*/}
+            }
+          }
+
+          var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0;
+
+          alert(g0 + " gr de " + material0n);
+
+          for (var i = 1; i <= 7; i++) {
+            var materialForm = document.getElementById("material"+i).value * 1;
+            if (materialForm!=0){
+              if(i==1){ g1 = (materialForm * m1) / 1000;  alert(g1 + " gr de " + material1n);}
+              if(i==2){ g2 = (materialForm * m2) / 1000;  alert(g2 + " gr de " + material2n);}
+              if(i==3){ g3 = (materialForm * m3) / 1000;  alert(g3 + " gr de " + material3n);}
+              if(i==4){ g4 = (materialForm * m4) / 1000;  alert(g4 + " gr de " + material4n);}
+              if(i==5){ g5 = (materialForm * m5) / 1000;  alert(g5 + " gr de " + material5n);}
+              if(i==6){ g6 = (materialForm * m6) / 1000;  alert(g6 + " gr de " + material6n);}
+              if(i==7){ g7 = (materialForm * m7) / 1000;  alert(g7 + " gr de " + material7n);}
+            }
+          }
+        }
+      }
+
+      
+        function validaciones(){
+        var diametro = document.getElementById("diametro").value*1;
+        var anchura1 = document.getElementById("anchura1").value*1;
+        var angulo = document.getElementById("angulo").value*1;
+        var diamante = document.getElementById("diamante").value*1;
+        var porcent = 0;
+        for (var i = 1; i <= 7; i++) {
+          var material = document.getElementById("material"+i).value * 1;
+          porcent+=material;
+        }
+        
+        if(diametro < 1){alert("Ingresa un DIAMETRO correcto"); return 1;}
+        else if(anchura1==0){alert("Ingresa una ANCHURA correcta"); return 2;}
+        else if(angulo <= 0 || angulo >= 90){alert("Ingresa un ANGULO correcto"); return 3;}
+        else if(diamante==0){alert("Ingresa cantidad de DIAMANTE correcta"); return 4;}
+        else if(porcent!=100){alert("Ingresa cantidades de MATERIALES correctas"); return 5;}
+        else return 0;
+      }
+      
+
+    </script>
+
+  </body>
+</html>
