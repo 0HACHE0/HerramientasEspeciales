@@ -42,37 +42,57 @@
 
         <div class="col-md-6 ml-auto mr-auto">
 
+          <div class="form-group row">
+            <p class="fontH col-3 col-form-label">Cliente:</p>
+            <div class="col-9">
+              <input type="text" class="form-control form-control-sm" id="cliente">
+            </div>
+          </div>
+
           <div class="row col-md-10 ml-auto mr-auto">
-            <p class="ml-auto mr-auto fontH0">Pieza</p>
+            <label class="ml-auto mr-auto fontH0">Pieza</label>
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Diametro:</p>
-            <input type="number" class="form-control" id="diametro" placeholder="0" min="0" max ="60">
+            <label class="fontH">Diametro:</label>
+            <input type="number" class="form-control form-control-sm" id="diametro" placeholder="0" min="0" max ="60">
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Anchura:</p>
-            <input type="number" class="form-control" id="anchura" placeholder="0" min="0">
+            <label class="fontH">Anchura:</label>
+            <input type="number" class="form-control form-control-sm" id="anchura" placeholder="0" min="0">
           </div>
 
           
           <div class="form-group col-md-12">
-            <p class="fontH">Ángulo:</p>
-            <input type="number" class="form-control" id="angulo" placeholder="0" min="0" max ="180">
+            <label class="fontH">Ángulo:</label>
+            <input type="number" class="form-control form-control-sm" id="angulo" placeholder="0" min="0" max ="180">
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Cantidad de Diamante:</p>
-            <input type="number" class="form-control" id="diamante" placeholder="0" min="0">
+            <label class="fontH">Cantidad de Diamante:</label>
+            <input type="number" class="form-control form-control-sm" id="diamante" placeholder="0" min="0">
           </div>
+
+          <div class="form-group col-md-12">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="bujeros1" value="2" onclick="deshabilitaCheckBox(value)">
+              <label class="form-check-label fontH" >Sin Bujeros</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="bujeros2" value="1" onclick="deshabilitaCheckBox(value)">
+              <label class="form-check-label fontH" >Con bujeros</label>
+            </div>
+          </div>
+          
 
         </div>
 
         <div class="col-md-6 ml-auto mr-auto">
 
           <div class="row col-md-10 ml-auto mr-auto">
-            <p class="ml-auto mr-auto fontH0">Materiales</p>
+            <label class="ml-auto mr-auto fontH0">Materiales</label>
           </div>
           
           <br>
@@ -80,7 +100,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Bronce:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material1" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material1" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -88,7 +108,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Cobalto:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material2" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material2" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
 
@@ -97,7 +117,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Hierro:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material3" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material3" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -105,7 +125,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Manganeso:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material4" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material4" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -113,7 +133,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Niquel:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material5" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material5" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -121,7 +141,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Zinc:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material6" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material6" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -129,7 +149,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Grafito:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material7" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material7" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -154,66 +174,20 @@
 
     <script type="text/javascript">
 
+      document.getElementById("bujeros1").checked = true;
+
       function calcular(){
 
         if (validaciones()==0){
 
-/*DIAMETRO 1*/
+/*DATOS QUE INGRESA EL USUARIO*/
           var diametro = document.getElementById("diametro").value;
-/*RADIO 1*/
-          var radio = diametro / 2;
-
           var angulo = document.getElementById("angulo").value;
-          var rad = (Math.PI * angulo ) / 180 ;
-          var anguloCal = Math.cos(rad);        
-/*HIPOTENUSA*/
-          var hipotenusa = radio / anguloCal;
-          alert("H Hipotenusa Externa: " + hipotenusa);
-
-/*BUJEROS*/
-          var bujeros = hipotenusa - 3 - 3;
-          alert("H Largo cada bujero Externa: " + bujeros);
-
-          var volumenBujeros = bujeros * 3 * 3;
-//          alert("H Volumen cada bujero: " + volumenBujeros);
-
-          var superBujeros = volumenBujeros * 3;
-//          alert("H Volumen de todos los bujeros: " + superBujeros);
-
-          var b2 = (hipotenusa*hipotenusa) - (radio*radio);
-/*ALTURA*/
-          var altura = Math.sqrt(b2);
-        alert("H Altura Externa: " + altura);
-
-/*ANCHURA*/ 
-          var anchura = document.getElementById("anchura").value*1;
-        alert("H Anchura: " + anchura);
-
-/*VOLUMEN 1*/
-          var volumen1 = (Math.PI * radio * radio * altura) / 3;
-        alert("H Volumen Externo: " + volumen1);
-
-
-
-          var radio2 = radio - anchura;
-        alert("H Radio Interno: " + radio2);
-
-          var hipotenusa2 = radio2 / anguloCal;
-        alert("H Hipotenusa Interno: " + hipotenusa2);
-
-          b2 = (hipotenusa2*hipotenusa2) - (radio2*radio2);
-          var altura2 = Math.sqrt(b2);
-        alert("H Altura Interno: " + altura2);
-
-          var volumen2 = (Math.PI * radio2 * radio2 * altura2) / 3;
-        alert("H Volumen Interno: " + volumen2);
-
-
-          var volumenTotal = volumen1 - volumen2;
-        alert("H Volumen Total: " + volumenTotal);
-
+          var anchura = document.getElementById("anchura").value * 1;
           var diamanteForm = document.getElementById("diamante").value * 1;
-          var diamante = (diamanteForm * 4.4) / 100;
+          var conBujeros = document.getElementById("bujeros2").checked;
+
+/*CONSTANTES*/
 
           var d0 = 0.0571;  //Diamante
           var material0n = "Diamante";
@@ -233,15 +207,102 @@
           var material7n = "Grafito";
 
 
-          var kilates = (volumenTotal * diamante) / 1000;
-        alert("H Kilates Diamante: " + kilates);
+                                                                                                      /*CALCULOS DE VOLUMEN DEL CONO*/
+/*CALCULOS PARA DETERMINAR ANGULO*/
+          var rad = (Math.PI * angulo ) / 180 ;
+          var anguloCal = Math.cos(rad);   
+
+
+
+/*RADIO CONO MAYOR*/
+          var radioE = diametro / 2;
+//        alert("H Radio CONO Externo: " + radio);
+     
+/*HIPOTENUSA CONO MAYOR*/
+          var hipotenusaE = radioE / anguloCal;
+//          alert("H Hipotenusa CONO Externo: " + hipotenusa);
+
+          var b2 = (hipotenusaE*hipotenusaE) - (radioE*radioE);
+/*ALTURA CONO MAYOR*/
+          var alturaE = Math.sqrt(b2);
+//        alert("H Altura CONO ExternO: " + altura);
+
+/*VOLUMEN CONO MAYOR*/
+          var volumenConoMayor = (Math.PI * radioE * radioE * alturaE) / 3;
+//        alert("H Volumen Externo CONO: " + volumenConoMayor);
+
+
+
+/*RADIO CONO MENOR*/
+          var radioI = radioE - anchura;
+//        alert("H Radio CONO Interno: " + radio2);
+
+/*HIPOTENUSA CONO MENOR*/
+          var hipotenusaI = radioI / anguloCal;
+//        alert("H Hipotenusa CONO Interno: " + hipotenusa2);
+
+/*ALTURA CONO MENOR*/
+          b2 = (hipotenusaI*hipotenusaI) - (radioI*radioI);
+          var alturaI = Math.sqrt(b2);
+//        alert("H Altura CONO Interno: " + altura2);
+
+/*VOLUMEN CONO MENOR*/
+          var volumenConoMenor = (Math.PI * radioI * radioI * alturaI) / 3;
+//        alert("H Volumen Interno CONO: " + volumenConoMenor);
+
+
+          var volumenTotalCono = volumenConoMayor - volumenConoMenor;
+        alert("H Volumen Total CONO: " + volumenTotalCono);
+
+
+/*CANTIDAD DE SIAMANTE (SE PASA A %)*/
+          var diamante = (diamanteForm * 4.4) / 100;
+
+          
+
+                                                                                                      /*CALCULOS DE VOLUMEN DE LA BASE*/
+
+          var volumenCilindroBase = Math.PI * radioE * radioE * anchura;
+//        alert("H Volumen Cilindro Base: " + volumenCilindroBase);
+
+          var volumenConoTruncoBase = Math.PI * anchura * ( (radioE * radioE) + (radioI * radioI) + (radioE * radioI) ) / 3;
+//        alert("H Volumen Cono Trunco Base: " + volumenConoTruncoBase);
+
+          var volumenTotalBase = volumenCilindroBase - volumenConoTruncoBase;
+        alert("H Volumen Total BASE: " + volumenTotalBase);
+
+                                                                                                      /*CALCULO VOLUMEN DE BUJEROS*/
+
+
+          var alturaBujeros = hipotenusaE - 3 - 3;
+//        alert("H Largo cada bujero Externa: " + alturaBujeros);
+
+          var volumenBujero = alturaBujeros * 3 * 3;
+//        alert("H Volumen cada bujero: " + volumenBujero);
+
+          var volumenTotalBujeros = volumenBujero * 3;
+//        alert("H Volumen de todos los bujeros: " + volumenTotalBujeros);
+
+          if(conBujeros==false){
+            volumenTotalBujeros = 0;
+          }
+
+
+                                                                                                      //CALCULOS DE VOLUMEN DE LA PIEZA COMPLETA
+
+
+          var volumenTotalPiezaSinDiamante = volumenTotalCono + volumenTotalBase + volumenTotalBujeros;
+        alert("H Volumen Total Pieza SIN DIAMANTE: " + volumenTotalPiezaSinDiamante);
+
+          var kilates = (volumenTotalPiezaSinDiamante * diamante) / 1000;
+//        alert("H Kilates Diamante: " + kilates);
           var g0 = kilates/5;
 
-          var volumenX = kilates * d0 * 1000;
-        alert("H Volumen X (Diamante): " + volumenX);
+          var volumenDiamante = kilates * d0 * 1000;
+//        alert("H Volumen X (Diamante): " + volumenX);
 
-          var vol2mm = volumenTotal - volumenX;
-        alert("H Vol2mm: " + vol2mm);
+          var vol2mm = volumenTotalPiezaSinDiamante - volumenDiamante;
+        alert("Volumen Total Pieza CON DIAMANTE: " + vol2mm);
   
 
           var m1=0, m2=0, m3=0, m4=0, m5=0, m6=0, m7=0;
@@ -249,13 +310,14 @@
           for (var i = 1; i <= 7; i++) {
             var materialForm = document.getElementById("material"+i).value * 1;
             if (materialForm!=0){
-              if(i==1){ m1 = (d1 * vol2mm) / 1000;  alert("Matriz para " + material1n + " es de: " + m1);}
-              if(i==2){ m2 = (d2 * vol2mm) / 1000;  alert("Matriz para " + material2n + " es de: " + m2);}
-              if(i==3){ m3 = (d3 * vol2mm) / 1000;  alert("Matriz para " + material3n + " es de: " + m3);}
-              if(i==4){ m4 = (d4 * vol2mm) / 1000;  alert("Matriz para " + material4n + " es de: " + m4);}
-              if(i==5){ m5 = (d5 * vol2mm) / 1000;  alert("Matriz para " + material5n + " es de: " + m5);}
-              if(i==6){ m6 = (d6 * vol2mm) / 1000;  alert("Matriz para " + material6n + " es de: " + m6);}
-              if(i==7){ m7 = (d7 * vol2mm) / 1000;  alert("Matriz para " + material7n + " es de: " + m7);}
+              if(i==1){ m1 = (d1 * vol2mm) / 1000;   //alert("Matriz para " + material1n + " es de: " + m1);
+              }if(i==2){ m2 = (d2 * vol2mm) / 1000;  //alert("Matriz para " + material2n + " es de: " + m2);
+              }if(i==3){ m3 = (d3 * vol2mm) / 1000;  //alert("Matriz para " + material3n + " es de: " + m3);
+              }if(i==4){ m4 = (d4 * vol2mm) / 1000;  //alert("Matriz para " + material4n + " es de: " + m4);
+              }if(i==5){ m5 = (d5 * vol2mm) / 1000;  //alert("Matriz para " + material5n + " es de: " + m5);
+              }if(i==6){ m6 = (d6 * vol2mm) / 1000;  //alert("Matriz para " + material6n + " es de: " + m6);
+              }if(i==7){ m7 = (d7 * vol2mm) / 1000;  //alert("Matriz para " + material7n + " es de: " + m7);
+              }
             }
           }
 
@@ -296,6 +358,10 @@
         else if(diamante <= 0){alert("Ingresa cantidad de DIAMANTE correcta."); return 4;}
         else if(porcent != 100){alert("WARNING!\n\nLas cantidades de MATERIALES no corresponden al 100%."); return 0;}
         else return 0;
+      }
+
+      function deshabilitaCheckBox(value){
+        document.getElementById("bujeros"+value).checked = false;
       }
       
 
