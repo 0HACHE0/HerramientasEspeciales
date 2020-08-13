@@ -53,18 +53,9 @@
 
           <div class="form-group col-md-12">
             <p class="fontH">Anchura:</p>
-            <select id="anchura1" class="form-control col-md-12">
-              <option selected value="0">Elige una...</option>
-              <option value="1">1/8</option>
-              <option value="2">2/8</option>
-              <option value="3">3/8</option>
-              <option value="4">4/8</option>
-              <option value="5">5/8</option>
-              <option value="6">6/8</option>
-              <option value="7">7/8</option>
-              <option value="8">8/8</option>
-            </select>
+            <input type="number" class="form-control" id="anchura" placeholder="0" min="0">
           </div>
+
           
           <div class="form-group col-md-12">
             <p class="fontH">Ángulo:</p>
@@ -73,22 +64,7 @@
 
           <div class="form-group col-md-12">
             <p class="fontH">Cantidad de Diamante:</p>
-            <select id="diamante" class="form-control col-md-12">
-              <option selected value="0">Elige una...</option>
-              <option value="100">100</option>
-              <option value="95">95</option>
-              <option value="90">90</option>
-              <option value="85">85</option>
-              <option value="80">80</option>
-              <option value="75">75</option>
-              <option value="70">70</option>
-              <option value="65">65</option>
-              <option value="60">60</option>
-              <option value="55">55</option>
-              <option value="50">50</option>
-              <option value="45">45</option>
-              <option value="40">40</option>
-            </select>
+            <input type="number" class="form-control" id="diamante" placeholder="0" min="0">
           </div>
 
         </div>
@@ -209,11 +185,8 @@
           var altura = Math.sqrt(b2);
         alert("H Altura Externa: " + altura);
 
-          var anchura1 = document.getElementById("anchura1").value*1;
-          var aux = anchura1 * 3.175;
-
-/*ANCHURA*/
-          var anchura = aux;
+/*ANCHURA*/ 
+          var anchura = document.getElementById("anchura").value*1;
         alert("H Anchura: " + anchura);
 
 /*VOLUMEN 1*/
@@ -239,10 +212,8 @@
           var volumenTotal = volumen1 - volumen2;
         alert("H Volumen Total: " + volumenTotal);
 
-
-          var diamanteForm = document.getElementById("diamante").value;
+          var diamanteForm = document.getElementById("diamante").value * 1;
           var diamante = (diamanteForm * 4.4) / 100;
-
 
           var d0 = 0.0571;  //Diamante
           var material0n = "Diamante";
@@ -310,7 +281,7 @@
       
         function validaciones(){
         var diametro = document.getElementById("diametro").value*1;
-        var anchura1 = document.getElementById("anchura1").value*1;
+        var anchura = document.getElementById("anchura").value*1;
         var angulo = document.getElementById("angulo").value*1;
         var diamante = document.getElementById("diamante").value*1;
         var porcent = 0;
@@ -319,11 +290,11 @@
           porcent+=material;
         }
         
-        if(diametro < 1){alert("Ingresa un DIAMETRO correcto"); return 1;}
-        else if(anchura1==0){alert("Ingresa una ANCHURA correcta"); return 2;}
-        else if(angulo <= 0 || angulo >= 90){alert("Ingresa un ANGULO correcto"); return 3;}
-        else if(diamante==0){alert("Ingresa cantidad de DIAMANTE correcta"); return 4;}
-        else if(porcent!=100){alert("Ingresa cantidades de MATERIALES correctas"); return 5;}
+        if(diametro <= 0){alert("Ingresa un DIAMETRO correcto."); return 1;}
+        else if(anchura <= 0){alert("Ingresa una ANCHURA correcta."); return 2;}
+        else if(angulo <= 0 || angulo >= 90){alert("Ingresa un ANGULO correcto."); return 3;}
+        else if(diamante <= 0){alert("Ingresa cantidad de DIAMANTE correcta."); return 4;}
+        else if(porcent != 100){alert("Las cantidades de MATERIALES no corresponden al 100%.\n\nPor favor asegurate que la información sea correcta."); return 0;}
         else return 0;
       }
       
