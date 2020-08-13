@@ -42,28 +42,35 @@
 
         <div class="col-md-6 ml-auto mr-auto">
 
+          <div class="form-group row">
+            <p class="fontH col-3 col-form-label">Cliente:</p>
+            <div class="col-9">
+              <input type="text" class="form-control form-control-sm" id="cliente">
+            </div>
+          </div>
+
           <div class="row col-md-10 ml-auto mr-auto">
-            <p class="ml-auto mr-auto fontH0">Pieza</p>
+            <label class="ml-auto mr-auto fontH0">Pieza</label>
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Diametro Externo:</p>
-            <input type="number" class="form-control" id="diametroE" placeholder="0" min="0">
+            <label class="fontH">Diametro Externo:</label>
+            <input type="number" class="form-control form-control-sm" id="diametroE" placeholder="0" min="0">
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Diametro Interno:</p>
-            <input type="number" class="form-control" id="diametroI" placeholder="0" min="0">
+            <label class="fontH">Diametro Interno:</label>
+            <input type="number" class="form-control form-control-sm" id="diametroI" placeholder="0" min="0">
           </div>
 
            <div class="form-group col-md-12">
-            <p class="fontH">Altura:</p>
-            <input type="number" class="form-control" id="altura" placeholder="0" min="0">
+            <label class="fontH">Altura:</label>
+            <input type="number" class="form-control form-control-sm" id="altura" placeholder="0" min="0">
           </div>
 
           <div class="form-group col-md-12">
-            <p class="fontH">Cantidad de Diamante:</p>
-            <input type="number" class="form-control" id="diamante" placeholder="0" min="0">
+            <label class="fontH">Cantidad de Diamante:</label>
+            <input type="number" class="form-control form-control-sm" id="diamante" placeholder="0" min="0">
           </div>
 
         </div>
@@ -79,7 +86,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Bronce:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material1" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material1" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -87,7 +94,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Cobalto:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material2" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material2" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
 
@@ -96,7 +103,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Hierro:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material3" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material3" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -104,7 +111,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Manganeso:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material4" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material4" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -112,7 +119,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Niquel:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material5" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material5" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -120,7 +127,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Zinc:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material6" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material6" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -128,7 +135,7 @@
           <div class="form-group row">
             <p class="fontH col-4 col-form-label">Grafito:</p>
             <div class="col-6">
-              <input type="number" class="form-control" id="material7" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material7" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -167,7 +174,7 @@
           var areaE = Math.PI * radioE * radioE;
 /*VOLUMEN 1*/
           var volumenE = areaE * alturaForm;
-          alert("Volumen EXTERNO" + volumenE);
+        alert("Volumen EXTERNO: " + volumenE);
 
 
 
@@ -179,10 +186,10 @@
           var areaI = Math.PI * radioI * radioI;
 /*VOLUMEN 2*/
           var volumenI = areaI * alturaForm;
-          alert("Volumen INTERNO" + volumenI);
+        alert("Volumen INTERNO: " + volumenI);
 
           var volumenT1 = volumenE - volumenI;
-          alert("Volumen sin DIAMANTE" + volumenT1);
+        alert("H Volumen Total Pieza SIN DIAMANTE: " + volumenT1);
 
           var diamanteForm = document.getElementById("diamante").value;
           var diamante = (diamanteForm * 4.4) / 100;
@@ -205,33 +212,34 @@
           var material7n = "Grafito";
 
           var kilates = (volumenT1 * diamante) / 1000;
-          alert("H Kilates Diamante: " + kilates);
+//          alert("H Kilates Diamante: " + kilates);
           var g0 = kilates/5;
 
           var volumenX = kilates * d0 * 1000;
-          alert("H Volumen X (Diamante): " + volumenX);
+//          alert("H Volumen X (Diamante): " + volumenX);
 
           var vol2mm = volumenT1 - volumenX;
-          alert("H Vol2mm: " + vol2mm);
+        alert("Volumen Total Pieza CON DIAMANTE: " + vol2mm);
 
           var m1=0, m2=0, m3=0, m4=0, m5=0, m6=0, m7=0;
 
           for (var i = 1; i <= 7; i++) {
             var materialForm = document.getElementById("material"+i).value * 1;
             if (materialForm!=0){
-              if(i==1){ m1 = (d1 * vol2mm) / 1000;  alert("Matriz para " + material1n + " es de: " + m1);}
-              if(i==2){ m2 = (d2 * vol2mm) / 1000;  alert("Matriz para " + material2n + " es de: " + m2);}
-              if(i==3){ m3 = (d3 * vol2mm) / 1000;  alert("Matriz para " + material3n + " es de: " + m3);}
-              if(i==4){ m4 = (d4 * vol2mm) / 1000;  alert("Matriz para " + material4n + " es de: " + m4);}
-              if(i==5){ m5 = (d5 * vol2mm) / 1000;  alert("Matriz para " + material5n + " es de: " + m5);}
-              if(i==6){ m6 = (d6 * vol2mm) / 1000;  alert("Matriz para " + material6n + " es de: " + m6);}
-              if(i==7){ m7 = (d7 * vol2mm) / 1000;  alert("Matriz para " + material7n + " es de: " + m7);}
+              if(i==1){ m1 = (d1 * vol2mm) / 1000;   //alert("Matriz para " + material1n + " es de: " + m1);
+              }if(i==2){ m2 = (d2 * vol2mm) / 1000;  //alert("Matriz para " + material2n + " es de: " + m2);
+              }if(i==3){ m3 = (d3 * vol2mm) / 1000;  //alert("Matriz para " + material3n + " es de: " + m3);
+              }if(i==4){ m4 = (d4 * vol2mm) / 1000;  //alert("Matriz para " + material4n + " es de: " + m4);
+              }if(i==5){ m5 = (d5 * vol2mm) / 1000;  //alert("Matriz para " + material5n + " es de: " + m5);
+              }if(i==6){ m6 = (d6 * vol2mm) / 1000;  //alert("Matriz para " + material6n + " es de: " + m6);
+              }if(i==7){ m7 = (d7 * vol2mm) / 1000;  //alert("Matriz para " + material7n + " es de: " + m7);
+              }
             }
           }
 
           var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0;
 
-          alert("Se requieren " + g0 + " gr de " + material0n);
+        alert("Se requieren " + g0 + " gr de " + material0n);
 
           for (var i = 1; i <= 7; i++) {
             var materialForm = document.getElementById("material"+i).value * 1;
