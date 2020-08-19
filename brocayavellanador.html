@@ -239,7 +239,7 @@
         </div>
 
         <div class="form-group col-md-12">
-          <button type="button" class="btn btn-danger float-right" style="align-items: right;" onclick="calcular()">Calcular</button>
+          <button type="button" class="btn btn-success float-right" onclick="calcular()">CALCULAR</button>
         </div>
 
       </div>
@@ -259,8 +259,8 @@
                 </button>
               </div>
               <div class="modal-body" id="modalBodyH"></div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
+              <div class="modal-footer" id="modalFooterH">
+                
               </div>
             </div>
           </div>
@@ -274,8 +274,12 @@
 
     <script type="text/javascript">
 
+    var aux0 = 0;
+    var aux1 = 0;
+    var buttonCerrar='<button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>';
+    var buttonDescargar='<button type="button" class="btn btn-success" onclick="descargar()">DESCARGAR INFORME</button>';
 
-	function calcular(){
+    function calcular(){
 
         var cadena = "";
         var cadena0 = "";
@@ -308,322 +312,296 @@
         var d7 = 2.25;      //grafito
         var material7n = "GRAFITO";
 
-        if (validaciones()==0){
-                cadena += separador;
-                cadena += negra0 + "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA" + negra1 +separador;
+        if (validaciones() != 1){
+
+            cadena += separador;
+            cadena += negra0 + "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA" + negra1 +separador;
             //DATOS QUE INGRESA EL USUARIO
-			      //DIAMETRO
-          	var diametroForm = document.getElementById("diametro").value * 1;
-                cadena += "DIAMETRO: " + diametroForm + mm + separador;
-			      //ANCHO
-          	var anchoForm = document.getElementById("ancho").value * 1;
-                cadena += "ANCHO: " + anchoForm + mm + separador;
-			      //LARGO
-          	var largoForm = document.getElementById("largo").value * 1;
-                cadena += "LARGO: " + largoForm + mm + separador;
-			      //ANGULO
-          	var anguloForm = document.getElementById("angulo").value * 1;
-                cadena += "ÁNGULO: " + anguloForm + ang + separador;
+            //DIAMETRO
+            var diametroForm = document.getElementById("diametro").value * 1;
+            cadena += "DIAMETRO: " + diametroForm + mm + separador;
+            //ANCHO
+            var anchoForm = document.getElementById("ancho").value * 1;
+            cadena += "ANCHO: " + anchoForm + mm + separador;
+            //LARGO
+            var largoForm = document.getElementById("largo").value * 1;
+            cadena += "LARGO: " + largoForm + mm + separador;
+            //ANGULO
+            var anguloForm = document.getElementById("angulo").value * 1;
+            cadena += "ÁNGULO: " + anguloForm + ang + separador;
             //DIAMANTE PARA AVELLANADOR
-          	var diamanteForm0 = document.getElementById("diamante0").value * 1;
-                cadena += "DIAMANTE PARA AVELLANADOR: " + diamanteForm0 + separador;
-			      //DIAMANTE PARA BROCA
-          	var diamanteForm1 = document.getElementById("diamante1").value * 1;
-                cadena += "DIAMANTE PARA BROCA: " + diamanteForm1 + separador;
-			       
-                cadena += separador;
-            
+            var diamanteForm0 = document.getElementById("diamante0").value * 1;
+            cadena += "DIAMANTE PARA AVELLANADOR: " + diamanteForm0 + separador;
+            //DIAMANTE PARA BROCA
+            var diamanteForm1 = document.getElementById("diamante1").value * 1;
+            cadena += "DIAMANTE PARA BROCA: " + diamanteForm1 + separador;
 
-                cadena += negra0 + "MEDIDAS DE LA PIEZA QUE SE CALCULAN" + negra1 +separador;
-			      //RADIO
-          	var r = diametroForm / 2;
-                cadena += "RADIO: " + r + mm + separador;
-      			//RADIO CUADRADO
-      			var rCuadrado = r * r; 
+            cadena += separador;
 
 
-      			//CALCULOS ANGULO, CATETO E HIPOTENUSA.
-      			//ANGULO
-      			var angulo = 90 - anguloForm;
-      			//HIPOTENUSA
-      			var rad = (Math.PI * angulo ) / 180 ;
-          	var anguloCal = Math.cos(rad);
-          	var hipotenusa = 2.2 / anguloCal;
-                cadena += "HIPOTENUSA AVELLANADOR: " + hipotenusa + mm + separador;
-    		    //CATETO
-          	var b2 = (hipotenusa*hipotenusa) - (2.2 * 2.2);
-          	var cateto = Math.sqrt(b2);
-                cadena += "ALTURA AVELLANADOR: " + cateto + mm + separador;
+            cadena += negra0 + "MEDIDAS DE LA PIEZA QUE SE CALCULAN" + negra1 +separador;
+            //RADIO
+            var r = diametroForm / 2;
+            cadena += "RADIO: " + r + mm + separador;
+            //RADIO CUADRADO
+            var rCuadrado = r * r; 
 
 
-      			//CALCULO VOLUMEN 1
-      			//RADIO MAYOR 1
-      			var R1 = r + 2.2;
-                cadena += "RADIO EXTERIOR: " + R1 + mm + separador;
-      			var R1Cuadrado = R1 * R1;
-      			//RADIO MENOR 1
-      			var R2 = r + 1;
-      			var R2Cuadrado = R2 * R2;
-      			//VOLUMEN 1 1
-      			var S11 = Math.PI * R1Cuadrado * 1.2;
-      			//VOLUMEN 1 2
-      			var S12 = Math.PI * R2Cuadrado * 1.2;
-      			//VOLUMEN 1
-      			var V1 = S11 - S12;
-
-      			//imprimirVolumenX(1,V1);
+            //CALCULOS ANGULO, CATETO E HIPOTENUSA.
+            //ANGULO
+            var angulo = 90 - anguloForm;
+            //HIPOTENUSA
+            var rad = (Math.PI * angulo ) / 180 ;
+            var anguloCal = Math.cos(rad);
+            var hipotenusa = 2.2 / anguloCal;
+            cadena += "HIPOTENUSA AVELLANADOR: " + hipotenusa + mm + separador;
+            //CATETO
+            var b2 = (hipotenusa*hipotenusa) - (2.2 * 2.2);
+            var cateto = Math.sqrt(b2);
+            cadena += "ALTURA AVELLANADOR: " + cateto + mm + separador;
 
 
-      			//CALCULO VOLUMEN 2
-      			//VOLUMEN 2 1
-      			var S21 = Math.PI * R1Cuadrado * 0.8;
-      			//VOLUMEN 2 2
-      			var S22 = Math.PI * rCuadrado * 0.8;
-      			//VOLUMEN 2
-      			var V2 = S21 - S22;
+            //CALCULO VOLUMEN 1
+            //RADIO MAYOR 1
+            var R1 = r + 2.2;
+            cadena += "RADIO EXTERIOR: " + R1 + mm + separador;
+            var R1Cuadrado = R1 * R1;
+            //RADIO MENOR 1
+            var R2 = r + 1;
+            var R2Cuadrado = R2 * R2;
+            //VOLUMEN 1 1
+            var S11 = Math.PI * R1Cuadrado * 1.2;
+            //VOLUMEN 1 2
+            var S12 = Math.PI * R2Cuadrado * 1.2;
+            //VOLUMEN 1
+            var V1 = S11 - S12;
 
-      			//imprimirVolumenX(2,V2);
-
-
-      			//CALCULO VOLUMEN 3
-      			//ALTURA
-      			var altura = cateto + 0.8;
-      			//RADIO ANCHURA
-      			var rBeta = r - anchoForm;
-                cadena += "RADIO INTERIOR: " + rBeta + mm + separador;
-      			var rBetaCuadrado = rBeta * rBeta;
-      			//VOLUMEN 3 1
-      			var S31 = Math.PI * rCuadrado * altura;
-      			//VOLUMEN 3 2
-      			var S32 = Math.PI * rBetaCuadrado * altura;
-      			//VOLUMEN 3
-      			var V3 = S31 - S32;
-
-                cadena +=separador;
-
-      			//imprimirVolumenX(3,V3);
+            //imprimirVolumenX(1,V1);
 
 
-      			//CALCULO VOLUMEN 4
-      			//VOLUMEN 4 1
-      			var S41 = (Math.PI * cateto) * ( R1Cuadrado + rCuadrado + (R1*r) ) / 3;
-      			//VOLUMEN 4 2
-      			var S42 = Math.PI * rCuadrado * cateto;
-      			//VOLUMEN 4
-      			var V4 = S41 - S42;
+            //CALCULO VOLUMEN 2
+            //VOLUMEN 2 1
+            var S21 = Math.PI * R1Cuadrado * 0.8;
+            //VOLUMEN 2 2
+            var S22 = Math.PI * rCuadrado * 0.8;
+            //VOLUMEN 2
+            var V2 = S21 - S22;
 
-      			//imprimirVolumenX(4,V4);
-
-
-      			//CALCULO VOLUMEN 5
-      			//VOLUMEN 5 1
-      			var S51 = Math.PI * rCuadrado * largoForm;
-      			//VOLUMEN 5 2
-      			var S52 = Math.PI * rBetaCuadrado * largoForm;
-      			//VOLUMEN 5
-      			var V5 = S51 - S52;
-
-      			//imprimirVolumenX(5,V5);
+            //imprimirVolumenX(2,V2);
 
 
-      			//VOLUMENES TOTALES SIN DIAMANTE
-      			//VOLUMEN TOTAL AVELLANADOR SIN DIAMANTE
-      			var VT0 = V1 + V2 + V3 + V4;
-                cadena0 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0 + mm3 + separador;
-      			//VOLUMEN TOTAL BROCA SIN DIAMANTE
-      			var VT1 = V5;
-                cadena1 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT1 + mm3 + separador;
+            //CALCULO VOLUMEN 3
+            //ALTURA
+            var altura = cateto + 0.8;
+            //RADIO ANCHURA
+            var rBeta = r - anchoForm;
+            cadena += "RADIO INTERIOR: " + rBeta + mm + separador;
+            var rBetaCuadrado = rBeta * rBeta;
+            //VOLUMEN 3 1
+            var S31 = Math.PI * rCuadrado * altura;
+            //VOLUMEN 3 2
+            var S32 = Math.PI * rBetaCuadrado * altura;
+            //VOLUMEN 3
+            var V3 = S31 - S32;
+
+            cadena +=separador;
+
+            //imprimirVolumenX(3,V3);
 
 
-      			//CANTIDAD DE DIAMANTE (SE PASA A %)
-      			//DIAMANTE AVELLANADOR
-          	var diamante0 = (diamanteForm0 * 4.4) / 100;
-                cadena0 += "PORCENTAJE DE DIAMANTE: " + diamante0 + porc + separador;
-      			//DIAMANTE BROCA
-          	var diamante1 = (diamanteForm1 * 4.4) / 100;
-                cadena1 += "PORCENTAJE DE DIAMANTE: " + diamante1 + porc + separador;
+            //CALCULO VOLUMEN 4
+            //VOLUMEN 4 1
+            var S41 = (Math.PI * cateto) * ( R1Cuadrado + rCuadrado + (R1*r) ) / 3;
+            //VOLUMEN 4 2
+            var S42 = Math.PI * rCuadrado * cateto;
+            //VOLUMEN 4
+            var V4 = S41 - S42;
+
+            //imprimirVolumenX(4,V4);
 
 
-      			//KILATES Y GRAMOS DE DIAMANTE POR PIEZA
-      			//KILATES AVELLANADOR
-      			var kilates0 = (VT0 * diamante0) / 1000;
-      			//KILATES BROCA
-      			var kilates1 = (VT1 * diamante1) / 1000;
-      			//GRAMOS DE DIAMANTE AVELLANADOR
-      			var g0 = kilates0 / 5;
-      			//GRAMOS DE DIAMANTE BROCA
-      			var g1 = kilates1 / 5;
+            //CALCULO VOLUMEN 5
+            //VOLUMEN 5 1
+            var S51 = Math.PI * rCuadrado * largoForm;
+            //VOLUMEN 5 2
+            var S52 = Math.PI * rBetaCuadrado * largoForm;
+            //VOLUMEN 5
+            var V5 = S51 - S52;
+
+            //imprimirVolumenX(5,V5);
 
 
-      			//VOLUMENES DE DIAMANTE POR PIEZA
-      			//VOLUMEN DIAMANTE AVELLANADOR
-      			var VD0 = kilates0 * d0 * 1000;
-                cadena0 += "VOLUMEN DIAMANTE: " + VD0 + mm3 + separador;
-      			//VOLUMEN DIAMANTE BROCA
-      			var VD1 = kilates1 * d0 * 1000;
-                cadena1 += "VOLUMEN DIAMANTE: " + VD1 + mm3 + separador;
+            //VOLUMENES TOTALES SIN DIAMANTE
+            //VOLUMEN TOTAL AVELLANADOR SIN DIAMANTE
+            var VT0 = V1 + V2 + V3 + V4;
+            cadena0 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0 + mm3 + separador;
+            //VOLUMEN TOTAL BROCA SIN DIAMANTE
+            var VT1 = V5;
+            cadena1 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT1 + mm3 + separador;
 
 
-      			//VOLUMENES TOTALES CON DIAMANTE
-      			//VOLUMEN TOTAL AVELLANADOR CON DIAMANTE
-      			var vol0mm = VT0 - VD0;
-                cadena0 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm + mm3 + separador;
-      			//VOLUMEN TOTAL BROCA CON DIAMANTE
-      			var vol1mm = VT1 - VD1;
-                cadena1 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm + mm3 + separador;
-
-                cadena += negra0 + "CALCULOS DEL VOLUMEN DE AVELLANADOR" + negra1 +separador;
-                cadena += cadena0;
-                cadena += separador;
-                cadena += negra0 + "CALCULOS DEL VOLUMEN DE BROCA" + negra1 +separador;
-                cadena += cadena1;
-                cadena += separador;
-
-                cadena0 = "";
-                cadena1 = "";
-
-               
-      			//VARIABLES PARA MATRICES
-      			var m01=0, m02=0, m03=0, m04=0, m05=0, m06=0, m07=0;
-      			var m11=0, m12=0, m13=0, m14=0, m15=0, m16=0, m17=0;
-
-      			var auxMaterial;
-
-      			for (var i = 1; i <= 7; i++) {
-      				auxMaterial = document.getElementById("material0"+i).value * 1;
-      				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
-      				if (auxMaterial!=0){ 
-      					if(i==1){ m01 = (d1 * vol0mm) / 1000;   cadena0 += material1n + ": " + m01 + separador;
-      					}if(i==2){ m02 = (d2 * vol0mm) / 1000;  cadena0 += material2n + ": " + m02 + separador;
-      					}if(i==3){ m03 = (d3 * vol0mm) / 1000;  cadena0 += material3n + ": " + m03 + separador;
-      					}if(i==4){ m04 = (d4 * vol0mm) / 1000;  cadena0 += material4n + ": " + m04 + separador;
-      					}if(i==5){ m05 = (d5 * vol0mm) / 1000;  cadena0 += material5n + ": " + m05 + separador;
-      					}if(i==6){ m06 = (d6 * vol0mm) / 1000;  cadena0 += material6n + ": " + m06 + separador;
-      					}if(i==7){ m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07 + separador;
-      					}
-      				}
-
-      				auxMaterial = document.getElementById("material1"+i).value * 1;
-      				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
-      				if (auxMaterial!=0){
-      					if(i==1){ m11 = (d1 * vol1mm) / 1000;   cadena1 += material1n + ": " + m11 + separador;
-      					}if(i==2){ m12 = (d2 * vol1mm) / 1000;  cadena1 += material2n + ": " + m12 + separador;
-      					}if(i==3){ m13 = (d3 * vol1mm) / 1000;  cadena1 += material3n + ": " + m13 + separador;
-      					}if(i==4){ m14 = (d4 * vol1mm) / 1000;  cadena1 += material4n + ": " + m14 + separador;
-      					}if(i==5){ m15 = (d5 * vol1mm) / 1000;  cadena1 += material5n + ": " + m15 + separador;
-      					}if(i==6){ m16 = (d6 * vol1mm) / 1000;  cadena1 += material6n + ": " + m16 + separador;
-      					}if(i==7){ m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17 + separador;
-      					}
-      				}
-      			}
-
-                cadena += negra0 + "MATRIZ DE MATERIALES PARA AVELLANADOR" + negra1 +separador;
-                cadena += cadena0;
-                cadena += separador;
-                cadena += negra0 + "MATRIZ DE MATERIALES PARA BROCA" + negra1 +separador;
-                cadena += cadena1;
-                cadena += separador;
-
-                cadena0 = "";
-                cadena1 = "";
+            //CANTIDAD DE DIAMANTE (SE PASA A %)
+            //DIAMANTE AVELLANADOR
+            var diamante0 = (diamanteForm0 * 4.4) / 100;
+            cadena0 += "PORCENTAJE DE DIAMANTE: " + diamante0 + porc + separador;
+            //DIAMANTE BROCA
+            var diamante1 = (diamanteForm1 * 4.4) / 100;
+            cadena1 += "PORCENTAJE DE DIAMANTE: " + diamante1 + porc + separador;
 
 
-      			var g01=0, g02=0, g03=0, g04=0, g05=0, g06=0, g07=0;
-      			var g11=0, g12=0, g13=0, g14=0, g15=0, g16=0, g17=0;
+            //KILATES Y GRAMOS DE DIAMANTE POR PIEZA
+            //KILATES AVELLANADOR
+            var kilates0 = (VT0 * diamante0) / 1000;
+            //KILATES BROCA
+            var kilates1 = (VT1 * diamante1) / 1000;
+            //GRAMOS DE DIAMANTE AVELLANADOR
+            var g0 = kilates0 / 5;
+            //GRAMOS DE DIAMANTE BROCA
+            var g1 = kilates1 / 5;
 
-      			cadena0 += material0n+"("+diamante0+"%): " + g0 + gr + separador;
+
+            //VOLUMENES DE DIAMANTE POR PIEZA
+            //VOLUMEN DIAMANTE AVELLANADOR
+            var VD0 = kilates0 * d0 * 1000;
+            cadena0 += "VOLUMEN DIAMANTE: " + VD0 + mm3 + separador;
+            //VOLUMEN DIAMANTE BROCA
+            var VD1 = kilates1 * d0 * 1000;
+            cadena1 += "VOLUMEN DIAMANTE: " + VD1 + mm3 + separador;
+
+
+            //VOLUMENES TOTALES CON DIAMANTE
+            //VOLUMEN TOTAL AVELLANADOR CON DIAMANTE
+            var vol0mm = VT0 - VD0;
+            cadena0 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm + mm3 + separador;
+            //VOLUMEN TOTAL BROCA CON DIAMANTE
+            var vol1mm = VT1 - VD1;
+            cadena1 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm + mm3 + separador;
+
+            cadena += negra0 + "CALCULOS DEL VOLUMEN DE AVELLANADOR" + negra1 +separador;
+            cadena += cadena0;
+            cadena += separador;
+            cadena += negra0 + "CALCULOS DEL VOLUMEN DE BROCA" + negra1 +separador;
+            cadena += cadena1;
+            cadena += separador;
+
+            cadena0 = "";
+            cadena1 = "";
+
+
+            //VARIABLES PARA MATRICES
+            var m01=0, m02=0, m03=0, m04=0, m05=0, m06=0, m07=0;
+            var m11=0, m12=0, m13=0, m14=0, m15=0, m16=0, m17=0;
+
+            var auxMaterial;
+
+            for (var i = 1; i <= 7; i++) {
+                auxMaterial = document.getElementById("material0"+i).value * 1;
+                //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
+                if (auxMaterial!=0){ 
+                    if(i==1){         m01 = (d1 * vol0mm) / 1000;  cadena0 += material1n + ": " + m01 + separador;    }
+                    else if(i==2){    m02 = (d2 * vol0mm) / 1000;  cadena0 += material2n + ": " + m02 + separador;    }
+                    else if(i==3){    m03 = (d3 * vol0mm) / 1000;  cadena0 += material3n + ": " + m03 + separador;    }
+                    else if(i==4){    m04 = (d4 * vol0mm) / 1000;  cadena0 += material4n + ": " + m04 + separador;    }
+                    else if(i==5){    m05 = (d5 * vol0mm) / 1000;  cadena0 += material5n + ": " + m05 + separador;    }
+                    else if(i==6){    m06 = (d6 * vol0mm) / 1000;  cadena0 += material6n + ": " + m06 + separador;    }
+                    else{             m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07 + separador;    }
+                }
+
+                auxMaterial = document.getElementById("material1"+i).value * 1;
+                //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
+                if (auxMaterial!=0){
+                    if(i==1){         m11 = (d1 * vol1mm) / 1000;  cadena1 += material1n + ": " + m11 + separador;    }
+                    else if(i==2){    m12 = (d2 * vol1mm) / 1000;  cadena1 += material2n + ": " + m12 + separador;    }
+                    else if(i==3){    m13 = (d3 * vol1mm) / 1000;  cadena1 += material3n + ": " + m13 + separador;    }
+                    else if(i==4){    m14 = (d4 * vol1mm) / 1000;  cadena1 += material4n + ": " + m14 + separador;    }
+                    else if(i==5){    m15 = (d5 * vol1mm) / 1000;  cadena1 += material5n + ": " + m15 + separador;    }
+                    else if(i==6){    m16 = (d6 * vol1mm) / 1000;  cadena1 += material6n + ": " + m16 + separador;    }
+                    else{             m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17 + separador;    }
+                }
+            }
+
+            cadena += negra0 + "MATRIZ DE MATERIALES PARA AVELLANADOR" + negra1 +separador;
+            cadena += cadena0;
+            cadena += separador;
+            cadena += negra0 + "MATRIZ DE MATERIALES PARA BROCA" + negra1 +separador;
+            cadena += cadena1;
+            cadena += separador;
+
+            cadena0 = "";
+            cadena1 = "";
+
+
+            var g01=0, g02=0, g03=0, g04=0, g05=0, g06=0, g07=0;
+            var g11=0, g12=0, g13=0, g14=0, g15=0, g16=0, g17=0;
+
+            cadena0 += material0n+"("+diamante0+"%): " + g0 + gr + separador;
             cadena1 += material0n+"("+diamante1+"%): " + g1 + gr + separador;
 
-          	for (var i = 1; i <= 7; i++) {
+            for (var i = 1; i <= 7; i++) {
 
-	            auxMaterial = document.getElementById("material0"+i).value * 1;
-	            //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
-	            if (auxMaterial!=0){
-      					if(i==1){ g01 = (auxMaterial * m01) / 100;   cadena0 += material1n + "(" + auxMaterial + "%): " + g01 + gr + separador;
-      					}if(i==2){ g02 = (auxMaterial * m02) / 100;  cadena0 += material2n + "(" + auxMaterial + "%): " + g02 + gr + separador;
-      					}if(i==3){ g03 = (auxMaterial * m03) / 100;  cadena0 += material3n + "(" + auxMaterial + "%): " + g03 + gr + separador;
-      					}if(i==4){ g04 = (auxMaterial * m04) / 100;  cadena0 += material4n + "(" + auxMaterial + "%): " + g04 + gr + separador;
-      					}if(i==5){ g05 = (auxMaterial * m05) / 100;  cadena0 += material5n + "(" + auxMaterial + "%): " + g05 + gr + separador;
-      					}if(i==6){ g06 = (auxMaterial * m06) / 100;  cadena0 += material6n + "(" + auxMaterial + "%): " + g06 + gr + separador;
-      					}if(i==7){ g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07 + gr + separador;
-      					}
-            	}
+                auxMaterial = document.getElementById("material0"+i).value * 1;
+                //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
+                if (auxMaterial!=0){
+                    if(i==1){         g01 = (auxMaterial * m01) / 100;  cadena0 += material1n + "(" + auxMaterial + "%): " + g01 + gr + separador;    }
+                    else if(i==2){    g02 = (auxMaterial * m02) / 100;  cadena0 += material2n + "(" + auxMaterial + "%): " + g02 + gr + separador;    }
+                    else if(i==3){    g03 = (auxMaterial * m03) / 100;  cadena0 += material3n + "(" + auxMaterial + "%): " + g03 + gr + separador;    }
+                    else if(i==4){    g04 = (auxMaterial * m04) / 100;  cadena0 += material4n + "(" + auxMaterial + "%): " + g04 + gr + separador;    }
+                    else if(i==5){    g05 = (auxMaterial * m05) / 100;  cadena0 += material5n + "(" + auxMaterial + "%): " + g05 + gr + separador;    }
+                    else if(i==6){    g06 = (auxMaterial * m06) / 100;  cadena0 += material6n + "(" + auxMaterial + "%): " + g06 + gr + separador;    }
+                    else{             g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07 + gr + separador;    }
+                }
 
-            	auxMaterial = document.getElementById("material1"+i).value * 1;
-            	//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
-	            if (auxMaterial!=0){
-      					if(i==1){ g11 = (auxMaterial * m11) / 100;   cadena1 += material1n + "(" + auxMaterial + "%): " + g11 + gr + separador;
-      					}if(i==2){ g12 = (auxMaterial * m12) / 100;  cadena1 += material2n + "(" + auxMaterial + "%): " + g12 + gr + separador;
-      					}if(i==3){ g13 = (auxMaterial * m13) / 100;  cadena1 += material3n + "(" + auxMaterial + "%): " + g13 + gr + separador;
-      					}if(i==4){ g14 = (auxMaterial * m14) / 100;  cadena1 += material4n + "(" + auxMaterial + "%): " + g14 + gr + separador;
-      					}if(i==5){ g15 = (auxMaterial * m15) / 100;  cadena1 += material5n + "(" + auxMaterial + "%): " + g15 + gr + separador;
-      					}if(i==6){ g16 = (auxMaterial * m16) / 100;  cadena1 += material6n + "(" + auxMaterial + "%): " + g16 + gr + separador;
-      					}if(i==7){ g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17 + gr + separador;
-      					}
-            	}
-          	}
+                auxMaterial = document.getElementById("material1"+i).value * 1;
+                //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
+                if (auxMaterial!=0){
+                    if(i==1){         g11 = (auxMaterial * m11) / 100;  cadena1 += material1n + "(" + auxMaterial + "%): " + g11 + gr + separador;    }
+                    else if(i==2){    g12 = (auxMaterial * m12) / 100;  cadena1 += material2n + "(" + auxMaterial + "%): " + g12 + gr + separador;    }
+                    else if(i==3){    g13 = (auxMaterial * m13) / 100;  cadena1 += material3n + "(" + auxMaterial + "%): " + g13 + gr + separador;    }
+                    else if(i==4){    g14 = (auxMaterial * m14) / 100;  cadena1 += material4n + "(" + auxMaterial + "%): " + g14 + gr + separador;    }
+                    else if(i==5){    g15 = (auxMaterial * m15) / 100;  cadena1 += material5n + "(" + auxMaterial + "%): " + g15 + gr + separador;    }
+                    else if(i==6){    g16 = (auxMaterial * m16) / 100;  cadena1 += material6n + "(" + auxMaterial + "%): " + g16 + gr + separador;    }
+                    else{             g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17 + gr + separador;    }
+                }
+            }
 
-                cadena += negra0 + "GRAMOS DE MATERIALES PARA AVELLANADOR" + negra1 +separador;
-                cadena += cadena0;
-                cadena += separador;
-                cadena += negra0 + "GRAMOS DE MATERIALES PARA BROCA" + negra1 +separador;
-                cadena += cadena1;
+            cadena += negra0 + "GRAMOS DE MATERIALES PARA AVELLANADOR" + negra1 +separador;
+            cadena += cadena0;
+            cadena += separador;
+            cadena += negra0 + "GRAMOS DE MATERIALES PARA BROCA" + negra1 +separador;
+            cadena += cadena1;
 
             //IMPRESIÓN DE DATOS TÉCNICOS.
-            imprimeModalInfo(cadena,1);
+            if(auxM0==100 && auxM1==100)
+                imprimeModalInfo(cadena,1);
+            else
+                imprimeModalInfo(cadena,3);
         }
-
-	}
-
-    function imprimeModalInfo(cadena, id){
-
-      $('#colorModalHache').removeClass();
-
-      if (id==1){
-        $('#colorModalHache').addClass("bg-success");
-        $('#colorModalHache').addClass("modal-header");
-        $('#modalTitleH').html("INFORMACIÓN TÉCNICA");
-      }
-      else {
-        $('#colorModalHache').addClass("bg-danger");
-        $('#colorModalHache').addClass("modal-header");
-        $('#modalTitleH').html("ERROR!");
-      }
-       
-      $('#modalBodyH').html("<BR>"+cadena+"<BR><BR>");
-      $('#modalH').modal('show');
     }
 
-
     function validaciones(){
-      
-		//DIAMETRO
-  		  var diametroForm = document.getElementById("diametro").value * 1;
-		//ANCHO
-      	var anchoForm = document.getElementById("ancho").value * 1;
-		//LARGO
-      	var largoForm = document.getElementById("largo").value * 1;
-		//ANGULO
-      	var anguloForm = document.getElementById("angulo").value * 1;
-    //DIAMANTE PARA AVELLANADOR
+        //DIAMETRO
+        var diametroForm = document.getElementById("diametro").value * 1;
+        //ANCHO
+        var anchoForm = document.getElementById("ancho").value * 1;
+        //LARGO
+        var largoForm = document.getElementById("largo").value * 1;
+        //ANGULO
+        var anguloForm = document.getElementById("angulo").value * 1;
+        //DIAMANTE PARA AVELLANADOR
         var diamanteForm0 = document.getElementById("diamante0").value * 1;
-    //DIAMANTE PARA BROCA
+        //DIAMANTE PARA BROCA
         var diamanteForm1 = document.getElementById("diamante1").value * 1;
 
-      	var material;
         var porcent0 = 0;
-        for (var i = 1; i <= 7; i++) {
-          material = document.getElementById("material0"+i).value * 1;
-          porcent0+=material;
-        }
-
         var porcent1 = 0;
         for (var i = 1; i <= 7; i++) {
-          material = document.getElementById("material1"+i).value * 1;
-          porcent1+=material;
+            porcent0 += document.getElementById("material0"+i).value * 1;
+            porcent1 += document.getElementById("material1"+i).value * 1;
         }
-        
-        
+
+        auxM0 = porcent0;
+        auxM1 = porcent1;
+
         if(diametroForm <= 0){imprimeModalInfo("Ingresa un <strong>DIAMETRO</strong> correcto.",2); return 1;}
         else if(anchoForm <= 0){imprimeModalInfo("Ingresa un <strong>ANCHO</strong> correcto.",2); return 1;}
         else if(largoForm <= 0){imprimeModalInfo("Ingresa un <strong>LARGO</strong> correcto.",2); return 1;}
@@ -632,13 +610,38 @@
         else if(diamanteForm1 <= 0){imprimeModalInfo("Ingresa cantidad de <strong>DIAMANTE</strong> para <strong>BROCA</strong>.",2); return 1;}
         else if(porcent0 <= 0) { imprimeModalInfo("Las cantidades de MATERIALES para <strong>AVELLANADOR</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
         else if(porcent1 <= 0) { imprimeModalInfo("Las cantidades de MATERIALES para <strong>BROCA</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
-        else {
-        	if(porcent0 != 100)  alert("WARNING!\n\nLas cantidades de MATERIALES para AVELLANADOR no corresponden al 100%.");
-        	if(porcent1 != 100)  alert("WARNING!\n\nLas cantidades de MATERIALES para BROCA no corresponden al 100%.");        
-        	return 0;
+        else return 0;
+        
+    }
+
+    function imprimeModalInfo(cadena, id){
+        $('#colorModalHache').removeClass();
+        if (id==1){
+            $('#colorModalHache').addClass("bg-success");
+            $('#colorModalHache').addClass("modal-header");
+            $('#modalTitleH').html("INFORME COMPLETO");
+            document.getElementById("modalFooterH").innerHTML = buttonCerrar + buttonDescargar;
+        }
+        else if(id==2){
+            $('#colorModalHache').addClass("bg-danger");
+            $('#colorModalHache').addClass("modal-header");
+            $('#modalTitleH').html("ERROR!");
+            document.getElementById("modalFooterH").innerHTML = buttonCerrar;
+        }
+        else{
+            $('#colorModalHache').addClass("bg-warning");
+            $('#colorModalHache').addClass("modal-header");
+            $('#modalTitleH').html("INFORME COMPLETO (MATERIAL AL "+auxM0+"% y "+auxM1+"%)");
+            document.getElementById("modalFooterH").innerHTML = buttonCerrar + buttonDescargar;
         }
 
-      }
+        $('#modalBodyH').html(cadena+"<BR>");
+        $('#modalH').modal('show');
+    }
+
+    function descargar(){
+        alert("I'M STILL CODING THIS SHIT");
+    }
 
     </script>
 
