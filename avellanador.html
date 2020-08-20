@@ -35,6 +35,10 @@
           <li class="nav-item">
             <a class="nav-link" href="brocayavellanador.html">BROCA - AVELLANADOR</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="muelabisel.html">MUELA - BISEL</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -290,10 +294,19 @@
             var vConoM0 = (Math.PI * rE2 * alturaE) / 3;
 
 
+            //CALCULOS TRASCENDENTES PARA APROXIMAR LA LINEALIDAD DEL ANCHO INTERNO QUE SE CALCULA
+            var nuevoAngulo = 90 - anguloForm;
+            var radX = (Math.PI * nuevoAngulo ) / 180 ;
+            var anguloCalX = Math.cos(radX);
+            var hipoEX = anchoForm / anguloCalX;
+            var hipoEX2 = hipoEX * hipoEX;
+            var b2 = (hipoEX2) - (anchoForm * anchoForm);
+            var anchoX = Math.sqrt(b2);
+            cadena += "ANCHURA INTERIOR AL CENTRO:     " + anchoX + mm + separador;
+
 
             //RADIO CONO MENOR
-            var rI = rE - anchoForm;
-            cadena += "RADIO INTERIOR:     " + rI + mm + separador;
+            var rI = rE - anchoX;
             //RADIO CONO MENOR CUADRADO
             var rI2 = rI * rI;
 
@@ -302,16 +315,18 @@
             //HIPOTENUSA CONO MENOR CUADRADA
             var hipoI2 = hipoI * hipoI;
 
-
             b2 = (hipoI2) - (rI2);
             //ALTURA CONO MENOR
             var alturaI = Math.sqrt(b2);
+            cadena += "ALTURA INTERIOR AL CENTRO:     " + alturaI + mm + separador;
 
             //VOLUMEN CONO MENOR*/
             var vConoM1 = (Math.PI * rI2 * alturaI) / 3;
 
 
             var vT0 = vConoM0 - vConoM1;
+
+
 
             //CALCULOS DE VOLUMEN DE LA BASE*/
 
