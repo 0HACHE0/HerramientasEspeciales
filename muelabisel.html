@@ -280,30 +280,30 @@
 
             //CALCULOS VOLUMEN PIEZA 1 COMPLETA
 
-            //CALCULOS DE VOLUMEN DEL CONO 1*/
+            //CALCULOS DE VOLUMEN DEL CONO 1
             //CALCULOS ANGULO, CATETO E HIPOTENUSA.
             var rad = (Math.PI * anguloForm ) / 180 ;
             var anguloCal = Math.cos(rad);   
 
-            //RADIO CONO MAYOR
+            //RADIO CONO MAYOR 1
             var rE = diametroEForm / 2;
-            //RADIO CUADRADO
+            //RADIO CONO MAYOR CUADRADO 1
             var rE2 = rE * rE;
 
 
-            //HIPOTENUSA CONO MAYOR
+            //HIPOTENUSA CONO MAYOR 1
             var hipoE = rE / anguloCal;
             //cadena += "HIPOTENUSA EXTERIOR:     " + hipoE + mm + separador;
-            //HIPOTENUSA CUADRADA
+            //HIPOTENUSA CONO MAYOR CUADRADA 1
             var hipoE2 = hipoE * hipoE;
 
 
             var b2 = (hipoE2) - (rE2);
-            //ALTURA CONO MAYOR
+            //ALTURA CONO MAYOR 1
             var alturaE = Math.sqrt(b2);
             //cadena += "ALTURA EXTERIOR:     " + alturaE + mm + separador;
 
-            //VOLUMEN CONO MAYOR*/
+            //VOLUMEN CONO MAYOR 1
             var vConoM0 = (Math.PI * rE2 * alturaE) / 3;
 
 
@@ -320,23 +320,23 @@
 
 
 
-            //RADIO CONO MENOR
+            //RADIO CONO MENOR 1
             var rI = rE - anchoX;
             //cadena += "RADIO INTERIOR:     " + rI + mm + separador;
-            //RADIO CONO MENOR CUADRADO
+            //RADIO CONO MENOR CUADRADO 1
             var rI2 = rI * rI;
 
-            //HIPOTENUSA CONO MENOR
+            //HIPOTENUSA CONO MENOR 1
             var hipoI = rI / anguloCal;
-            //HIPOTENUSA CONO MENOR CUADRADA
+            //HIPOTENUSA CONO MENOR CUADRADA 1
             var hipoI2 = hipoI * hipoI;
 
             b2 = (hipoI2) - (rI2);
-            //ALTURA CONO MENOR
+            //ALTURA CONO MENOR 1
             var alturaI = Math.sqrt(b2);
-            cadena += "ALTURA INTERIOR AL CENTRO:     " + alturaI + mm + separador;
+            //cadena += "ALTURA INTERIOR AL CENTRO:     " + alturaI + mm + separador;
 
-            //VOLUMEN CONO MENOR*/
+            //VOLUMEN CONO MENOR 1
             var vConoM1 = (Math.PI * rI2 * alturaI) / 3;
 
 
@@ -347,16 +347,75 @@
             //CALCULOS DE VOLUMEN DE LA BASE 1
 
             var vCilM0 = Math.PI * rE2 * anchoForm;
-
             var vCilM1 = Math.PI * anchoForm * ( (rE2) + (rI2) + (rE * rI) ) / 3;
 
             var vT1 = vCilM0 - vCilM1;
 
 
 
+
+
             //CALCULOS VOLUMEN PIEZA 2 COMPLETA
 
-            var anguloContiguo = 90 - anguloForm;
+            //RADIO CONO MAYOR 2
+            var rO = diametroIForm / 2;
+            //RADIO CONO MAYOR CUADRADO 2
+            var rO2 = rO * rO;
+
+            //HIPOTENUSA CONO MAYOR 2
+            var hipoO = rO / anguloCal;
+            //HIPOTENUSA CONO MAYOR CUADRADA 2
+            var hipoO2 = hipoO * hipoO;
+
+
+            b2 = (hipoO2) - (rO2);
+            //ALTURA CONO MAYOR 2
+            var alturaO = Math.sqrt(b2);
+
+            //VOLUMEN CONO MAYOR 2
+            var vConoM2 = (Math.PI * rO2 * alturaO) / 3;
+
+
+
+            //RADIO CONO MENOR 2
+            var rU = rO - anchoX;
+            //RADIO CONO MENOR CUADRADO 2
+            var rU2 = rU * rU;
+
+            //HIPOTENUSA CONO MENOR 2
+            var hipoU = rU / anguloCal;
+            //HIPOTENUSA CONO MENOR CUADRADA 2
+            var hipoU2 = hipoU * hipoU;
+
+            b2 = (hipoU2) - (rU2);
+            //ALTURA CONO MENOR 2
+            var alturaU = Math.sqrt(b2);
+
+            //VOLUMEN CONO MENOR 2
+            var vConoM3 = (Math.PI * rU2 * alturaU) / 3;
+
+            if(rO < anchoX) alert("Inconsistencia en los calculos.\nPor favor verifica que los datos introducidos sean logicos.");
+
+
+            var vT2 = vConoM2 - vConoM3;
+            if (vT2<0){
+                vT2 = 0;
+                alert("Posible error en DIAMETRO INTERIOR de la pieza.");
+            }
+
+
+
+
+
+            //CALCULOS DE VOLUMEN DE LA BASE 1
+
+            var vCilM2 = Math.PI * rO2 * anchoForm;
+            var vCilM3 = Math.PI * anchoForm * ( (rO2) + (rU2) + (rO * rU) ) / 3;
+            var vT3 = vCilM2 - vCilM3;
+            if (vT3<0){
+                vT3 = 0;
+                alert("Posible error en ANCHO de la pieza.");
+            }
 
 
 
@@ -367,7 +426,12 @@
             var vTBujeros = vBujero * 3;
             if(conBujerosForm==false) vTBujeros = 0;
             */
+            var hipoReal = hipoE - hipoO;
+
+            cadena += "HIPOTENUSA REAL: " + hipoReal + mm + separador;
+
             cadena += separador;
+
 
 
 
@@ -378,7 +442,8 @@
             cadena += negra0 + "CALCULOS DEL VOLUMEN" + negra1 +separador;
 
             //VOLUMEN TOTAL SIN DIAMANTE
-            var vTSinD = vT0 + vT1 - vTBujeros;
+            var vTSinD = vT0 + vT1 - vT2 - vT3;
+            //var vTSinD = vT0 + vT1 - vTBujeros;
             cadena += "VOLUMEN TOTAL SIN DIAMANTE:     " + vTSinD + mm3 + separador;
 
 
