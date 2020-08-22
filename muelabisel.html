@@ -225,6 +225,8 @@
         var negra0 = "<strong>";
         var negra1 = "</strong>";
 
+        var flag=0;
+
         //CONSTANTES
         var d0 = 0.0571;      //Diamante
         var material0n = "DIAMANTE";
@@ -394,13 +396,17 @@
             //VOLUMEN CONO MENOR 2
             var vConoM3 = (Math.PI * rU2 * alturaU) / 3;
 
-            if(rO < anchoX) alert("Inconsistencia en los calculos.\nPor favor verifica que los datos introducidos sean logicos.");
+            if(rO < anchoX){
+                alert("Inconsistencia en los calculos.\nPor favor verifica que los datos introducidos sean logicos.");
+                flag=1;
+            }
 
 
             var vT2 = vConoM2 - vConoM3;
             if (vT2<0){
                 vT2 = 0;
                 alert("Posible error en DIAMETRO INTERIOR de la pieza.");
+                flag=1;
             }
 
 
@@ -415,6 +421,7 @@
             if (vT3<0){
                 vT3 = 0;
                 alert("Posible error en ANCHO de la pieza.");
+                flag=1;
             }
 
 
@@ -509,10 +516,19 @@
             }
 
             //IMPRESIÓN DE DATOS TÉCNICOS.
-            if(auxM==100)
-                imprimeModalInfo(cadena,1);
-            else
-                imprimeModalInfo(cadena,3);
+            if(auxM==100){
+                if(flag==0)
+                    imprimeModalInfo(cadena,1);
+                else
+                    imprimeModalInfo(cadena,4);
+              }
+            else{
+                if(flag==0)
+                    imprimeModalInfo(cadena,3);
+                else
+                    imprimeModalInfo(cadena,5);
+                
+              }
         }
     }
 
@@ -560,10 +576,22 @@
             $('#modalTitleH').html("ERROR!");
             document.getElementById("modalFooterH").innerHTML = buttonCerrar;
         }
-        else{
+        else if(id==3){
             $('#colorModalHache').addClass("bg-warning");
             $('#colorModalHache').addClass("modal-header");
             $('#modalTitleH').html("INFORME COMPLETO (MATERIAL AL "+auxM+"%)");
+            document.getElementById("modalFooterH").innerHTML = buttonCerrar + buttonDescargar;
+        }
+        else if(id==4){
+            $('#colorModalHache').addClass("bg-warning");
+            $('#colorModalHache').addClass("modal-header");
+            $('#modalTitleH').html("INFORME COMPLETO (INCONSISTENTE)");
+            document.getElementById("modalFooterH").innerHTML = buttonCerrar + buttonDescargar;
+        }
+        else{
+            $('#colorModalHache').addClass("bg-warning");
+            $('#colorModalHache').addClass("modal-header");
+            $('#modalTitleH').html("INFORME COMPLETO (MATERIAL AL "+auxM+"%) (INCONSISTENTE)");
             document.getElementById("modalFooterH").innerHTML = buttonCerrar + buttonDescargar;
         }
 
