@@ -368,7 +368,8 @@
             //CALCULO VOLUMEN 1
             //RADIO MAYOR 1
             var R1 = r + 2.2;
-            cadena += "RADIO EXTERIOR: " + R1 + mm + separador;
+            var D1Ext = R1 * 2;
+            cadena += "DIAMETRO EXTERIOR: " + D1Ext + mm + separador;
             var R1Cuadrado = R1 * R1;
             //RADIO MENOR 1
             var R2 = r + 1;
@@ -399,7 +400,8 @@
             var altura = cateto + 0.8;
             //RADIO ANCHURA
             var rBeta = r - anchoForm;
-            cadena += "RADIO INTERIOR: " + rBeta + mm + separador;
+            var D2Int = rBeta * 2;
+            cadena += "DIAMETRO INTERIOR: " + D2Int + mm + separador;
             var rBetaCuadrado = rBeta * rBeta;
             //VOLUMEN 3 1
             var S31 = Math.PI * rCuadrado * altura;
