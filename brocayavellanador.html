@@ -319,7 +319,7 @@
         if (validaciones() != 1){
 
             cadena += separador;
-            cadena += negra0 + "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA" + negra1 +separador;
+            cadena += negra0 + "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA  + 3%" + negra1 +separador;
             //DATOS QUE INGRESA EL USUARIO
             //DIAMETRO
             var diametroForm = document.getElementById("diametro").value * 1;
@@ -368,8 +368,7 @@
             //CALCULO VOLUMEN 1
             //RADIO MAYOR 1
             var R1 = r + 2.2;
-            var D1Ext = R1 * 2;
-            cadena += "DIAMETRO EXTERIOR: " + D1Ext + mm + separador;
+            cadena += "RADIO EXTERIOR: " + R1 + mm + separador;
             var R1Cuadrado = R1 * R1;
             //RADIO MENOR 1
             var R2 = r + 1;
@@ -400,8 +399,7 @@
             var altura = cateto + 0.8;
             //RADIO ANCHURA
             var rBeta = r - anchoForm;
-            var D2Int = rBeta * 2;
-            cadena += "DIAMETRO INTERIOR: " + D2Int + mm + separador;
+            cadena += "RADIO INTERIOR: " + rBeta + mm + separador;
             var rBetaCuadrado = rBeta * rBeta;
             //VOLUMEN 3 1
             var S31 = Math.PI * rCuadrado * altura;
@@ -474,13 +472,13 @@
             var VD1 = kilates1 * d0 * 1000;
             cadena1 += "VOLUMEN DIAMANTE: " + VD1 + mm3 + separador;
 
-
+//3% EXTRA
             //VOLUMENES TOTALES CON DIAMANTE
             //VOLUMEN TOTAL AVELLANADOR CON DIAMANTE
-            var vol0mm = VT0 - VD0;
+            var vol0mm = (VT0 - VD0) * 1.03;
             cadena0 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm + mm3 + separador;
             //VOLUMEN TOTAL BROCA CON DIAMANTE
-            var vol1mm = VT1 - VD1;
+            var vol1mm = (VT1 - VD1) * 1.03;
             cadena1 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm + mm3 + separador;
 
             cadena += negra0 + "CALCULOS DEL VOLUMEN DE AVELLANADOR" + negra1 +separador;
