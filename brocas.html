@@ -148,6 +148,30 @@
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Estaño:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material8" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Plata:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material9" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Pirita de Hierro:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material10" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
         </div>
 
         <div class="form-group col-md-12">
@@ -258,6 +282,13 @@
 		var d7 = 2.25;      //grafito
 		var material7n = "GRAFITO";
 
+		var d8 = 7.29;      //estaño
+		var material8n = "ESTAÑO";
+		var d9 = 10.49;      //plata
+		var material9n = "PLATA";
+		var d10 = 4.95;      //pirita de hierro
+		var material10n = "PIRITA DE HIERRO";
+
 		if (validaciones() != 1){
 
 			cadena += separador;
@@ -364,11 +395,11 @@
 			cadena += negra0 + headPDF4 + negra1 +separador;
 
 
-			var m1=0, m2=0, m3=0, m4=0, m5=0, m6=0, m7=0;
+			var m1=0, m2=0, m3=0, m4=0, m5=0, m6=0, m7=0,m8=0, m9=0, m10=0;
 
 			var auxMaterial;
 
-			for (var i = 1; i <= 7; i++) {
+			for (var i = 1; i <= 10; i++) {
 				auxMaterial = document.getElementById("material"+i).value * 1;
 				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0.
 				if (auxMaterial!=0){
@@ -384,14 +415,20 @@
 						textPDF4 += material5n+": " + m5.toFixed(4) + separadorPDF;}
 					else if(i==6){    m6 = (d6 * vTConD) / 1000;   cadena += material6n+": " + m6.toFixed(4) + separador;  
 						textPDF4 += material6n+": " + m6.toFixed(4) + separadorPDF;}
-					else{       m7 = (d7 * vTConD) / 1000;   cadena += material7n+": " + m7.toFixed(4) + separador;  
+					else if(i==7){    m7 = (d7 * vTConD) / 1000;   cadena += material7n+": " + m7.toFixed(4) + separador;  
 						textPDF4 += material7n+": " + m7.toFixed(4) + separadorPDF;}
+					else if(i==8){    m8 = (d8 * vTConD) / 1000;   cadena += material8n+": " + m8.toFixed(4) + separador;  
+						textPDF4 += material8n+": " + m8.toFixed(4) + separadorPDF;}
+					else if(i==9){    m9 = (d9 * vTConD) / 1000;   cadena += material9n+": " + m9.toFixed(4) + separador;  
+						textPDF4 += material9n+": " + m9.toFixed(4) + separadorPDF;}
+					else{       			m10 = (d10 * vTConD) / 1000;   cadena += material10n+": " + m10.toFixed(4) + separador;  
+						textPDF4 += material10n+": " + m10.toFixed(4) + separadorPDF;}
 				}
 			}
 
 			cadena += separador;
 
-			var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0;
+			var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0, g8=0, g9=0, g10=0;
 
 
 
@@ -400,7 +437,7 @@
 			cadena += material0n+"("+diamante+"%): " + g0.toFixed(4) + gr + separador;
 				textPDF5 += material0n+"("+diamante+"%): " + g0.toFixed(4) + gr + separadorPDF;
 
-			for (var i = 1; i <= 7; i++) {
+			for (var i = 1; i <= 10; i++) {
 				auxMaterial = document.getElementById("material"+i).value * 1;
 				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0.
 				if (auxMaterial!=0){
@@ -422,9 +459,19 @@
 					else if(i==6){    g6 = (auxMaterial * m6) / 100;  cadena += material6n+"("+auxMaterial+"%): " + g6.toFixed(4) + gr + separador;    
 						textPDF5 += material6n+"("+auxMaterial+"%): " + g6.toFixed(4) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "Z";}
-					else{       g7 = (auxMaterial * m7) / 100;  cadena += material7n+"("+auxMaterial+"%): " + g7.toFixed(4) + gr + separador;    
+					else if(i==7){     g7 = (auxMaterial * m7) / 100;  cadena += material7n+"("+auxMaterial+"%): " + g7.toFixed(4) + gr + separador;    
 						textPDF5 += material7n+"("+auxMaterial+"%): " + g7.toFixed(4) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "G";}
+
+					else if(i==8){    g8 = (auxMaterial * m8) / 100;  cadena += material8n+"("+auxMaterial+"%): " + g8.toFixed(4) + gr + separador;    
+						textPDF5 += material8n+"("+auxMaterial+"%): " + g8.toFixed(4) + gr + separadorPDF;
+						materialesPDF += "|" + auxMaterial + "E";}
+					else if(i==9){    g9 = (auxMaterial * m9) / 100;  cadena += material9n+"("+auxMaterial+"%): " + g9.toFixed(4) + gr + separador;    
+						textPDF5 += material9n+"("+auxMaterial+"%): " + g9.toFixed(4) + gr + separadorPDF;
+						materialesPDF += "|" + auxMaterial + "P";}
+					else{      			g10 = (auxMaterial * m10) / 100;  cadena += material10n+"("+auxMaterial+"%): " + g10.toFixed(4) + gr + separador;    
+						textPDF5 += material10n+"("+auxMaterial+"%): " + g10.toFixed(4) + gr + separadorPDF;
+						materialesPDF += "|" + auxMaterial + "PH";}
 				}
 			}
 
@@ -449,7 +496,7 @@
 		var diamanteForm = document.getElementById("diamante").value * 1;
 
 		var porcent = 0;
-		for (var i = 1; i <= 7; i++)
+		for (var i = 1; i <= 10; i++)
 			porcent+= document.getElementById("material"+i).value * 1;
 
 		auxM = porcent;
@@ -558,12 +605,12 @@
 			doc.setTextColor(200,50,80);
 		//TAMAÑO DE FUENTE HEAD
 			doc.setFontSize(16);
-		doc.text(20, 190, headPDF5);
+		doc.text(20, 205, headPDF5);
 		//COLOR DE FUENTE  (ROJO) (200,50,80)
 			doc.setTextColor(200,50,80);
 		//TAMAÑO DE FUENTE TEXT
 			doc.setFontSize(10);
-		doc.text(30, 195, textPDF5);
+		doc.text(30, 210, textPDF5);
 
 
 		//NOMBRE DEL ARCHIVO
