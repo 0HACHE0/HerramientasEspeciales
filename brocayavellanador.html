@@ -163,6 +163,30 @@
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Estaño:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material08" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Plata:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material09" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Pirita de Hierro:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material010" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
         </div>
 
         <div class="col-md-6 ml-auto mr-auto">
@@ -236,6 +260,30 @@
             <p class="fontH col-4 col-form-label">Grafito:</p>
             <div class="col-6">
               <input type="number" class="form-control form-control-sm" id="material17" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Estaño:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material18" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Plata:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material19" placeholder="0" min="0" max ="100">
+            </div>
+            <p class="fontH col-2 col-form-label">%</p>
+          </div>
+
+          <div class="form-group row">
+            <p class="fontH col-4 col-form-label">Pirita de Hierro:</p>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-sm" id="material110" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -315,6 +363,13 @@
         var material6n = "ZINC";
         var d7 = 2.25;      //grafito
         var material7n = "GRAFITO";
+
+        var d8 = 7.29;      //estaño
+        var material8n = "ESTAÑO";
+        var d9 = 10.49;      //plata
+        var material9n = "PLATA";
+        var d10 = 4.95;      //pirita de hierro
+        var material10n = "PIRITA DE HIERRO";
 
         if (validaciones() != 1){
 
@@ -493,12 +548,12 @@
 
 
             //VARIABLES PARA MATRICES
-            var m01=0, m02=0, m03=0, m04=0, m05=0, m06=0, m07=0;
-            var m11=0, m12=0, m13=0, m14=0, m15=0, m16=0, m17=0;
+            var m01=0, m02=0, m03=0, m04=0, m05=0, m06=0, m07=0, m08=0, m09=0, m010=0;
+            var m11=0, m12=0, m13=0, m14=0, m15=0, m16=0, m17=0, m18=0, m19=0, m110=0;
 
             var auxMaterial;
 
-            for (var i = 1; i <= 7; i++) {
+            for (var i = 1; i <= 10; i++) {
                 auxMaterial = document.getElementById("material0"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
                 if (auxMaterial!=0){ 
@@ -508,7 +563,10 @@
                     else if(i==4){    m04 = (d4 * vol0mm) / 1000;  cadena0 += material4n + ": " + m04 + separador;    }
                     else if(i==5){    m05 = (d5 * vol0mm) / 1000;  cadena0 += material5n + ": " + m05 + separador;    }
                     else if(i==6){    m06 = (d6 * vol0mm) / 1000;  cadena0 += material6n + ": " + m06 + separador;    }
-                    else{             m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07 + separador;    }
+                    else if(i==7){    m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07 + separador;   }
+                    else if(i==8){    m08 = (d8 * vol0mm) / 1000;  cadena0 += material8n + ": " + m08 + separador;    }
+                    else if(i==9){    m09 = (d9 * vol0mm) / 1000;  cadena0 += material9n + ": " + m09 + separador;    }
+                    else{   m010 = (d10 * vol0mm) / 1000;  cadena0 += material10n + ": " + m010 + separador;  }
                 }
 
                 auxMaterial = document.getElementById("material1"+i).value * 1;
@@ -520,7 +578,10 @@
                     else if(i==4){    m14 = (d4 * vol1mm) / 1000;  cadena1 += material4n + ": " + m14 + separador;    }
                     else if(i==5){    m15 = (d5 * vol1mm) / 1000;  cadena1 += material5n + ": " + m15 + separador;    }
                     else if(i==6){    m16 = (d6 * vol1mm) / 1000;  cadena1 += material6n + ": " + m16 + separador;    }
-                    else{             m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17 + separador;    }
+                    else if(i==7){    m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17 + separador;    }
+                    else if(i==8){    m18 = (d8 * vol1mm) / 1000;  cadena1 += material8n + ": " + m18 + separador;    }
+                    else if(i==9){    m19 = (d9 * vol1mm) / 1000;  cadena1 += material9n + ": " + m19 + separador;    }
+                    else{                m110 = (d10 * vol1mm) / 1000;  cadena1 += material10n + ": " + m110 + separador;}
                 }
             }
 
@@ -535,13 +596,13 @@
             cadena1 = "";
 
 
-            var g01=0, g02=0, g03=0, g04=0, g05=0, g06=0, g07=0;
-            var g11=0, g12=0, g13=0, g14=0, g15=0, g16=0, g17=0;
+            var g01=0, g02=0, g03=0, g04=0, g05=0, g06=0, g07=0, g08=0, g09=0, g010=0;
+            var g11=0, g12=0, g13=0, g14=0, g15=0, g16=0, g17=0, g18=0, g19=0, g110=0;
 
             cadena0 += material0n+"("+diamante0+"%): " + g0 + gr + separador;
             cadena1 += material0n+"("+diamante1+"%): " + g1 + gr + separador;
 
-            for (var i = 1; i <= 7; i++) {
+            for (var i = 1; i <= 10; i++) {
 
                 auxMaterial = document.getElementById("material0"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
@@ -552,7 +613,10 @@
                     else if(i==4){    g04 = (auxMaterial * m04) / 100;  cadena0 += material4n + "(" + auxMaterial + "%): " + g04 + gr + separador;    }
                     else if(i==5){    g05 = (auxMaterial * m05) / 100;  cadena0 += material5n + "(" + auxMaterial + "%): " + g05 + gr + separador;    }
                     else if(i==6){    g06 = (auxMaterial * m06) / 100;  cadena0 += material6n + "(" + auxMaterial + "%): " + g06 + gr + separador;    }
-                    else{             g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07 + gr + separador;    }
+                    else if(i==7){    g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07 + gr + separador;     }
+                    else if(i==8){    g08 = (auxMaterial * m08) / 100;  cadena0 += material8n + "(" + auxMaterial + "%): " + g08 + gr + separador;     }
+                    else if(i==9){    g09 = (auxMaterial * m09) / 100;  cadena0 += material9n + "(" + auxMaterial + "%): " + g09 + gr + separador;     }
+                    else{               g010 = (auxMaterial * m010) / 100;  cadena0 += material10n + "(" + auxMaterial + "%): " + g010 + gr + separador}
                 }
 
                 auxMaterial = document.getElementById("material1"+i).value * 1;
@@ -564,7 +628,10 @@
                     else if(i==4){    g14 = (auxMaterial * m14) / 100;  cadena1 += material4n + "(" + auxMaterial + "%): " + g14 + gr + separador;    }
                     else if(i==5){    g15 = (auxMaterial * m15) / 100;  cadena1 += material5n + "(" + auxMaterial + "%): " + g15 + gr + separador;    }
                     else if(i==6){    g16 = (auxMaterial * m16) / 100;  cadena1 += material6n + "(" + auxMaterial + "%): " + g16 + gr + separador;    }
-                    else{             g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17 + gr + separador;    }
+                    else if(i==7){    g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17 + gr + separador;    }
+                    else if(i==8){    g18 = (auxMaterial * m18) / 100;  cadena1 += material8n + "(" + auxMaterial + "%): " + g18 + gr + separador;    }
+                    else if(i==9){    g19 = (auxMaterial * m19) / 100;  cadena1 += material9n + "(" + auxMaterial + "%): " + g19 + gr + separador;    }
+                    else{                 g110 = (auxMaterial * m110) / 100;  cadena1 += material10n + "(" + auxMaterial + "%): " + g110 + gr + separador;}
                 }
             }
 
@@ -598,7 +665,7 @@
 
         var porcent0 = 0;
         var porcent1 = 0;
-        for (var i = 1; i <= 7; i++) {
+        for (var i = 1; i <= 10; i++) {
             porcent0 += document.getElementById("material0"+i).value * 1;
             porcent1 += document.getElementById("material1"+i).value * 1;
         }
