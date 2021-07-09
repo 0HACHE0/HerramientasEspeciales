@@ -392,10 +392,10 @@
 			var media_circunferencia = circunferencia / 2;
 			
 			//SEGMENTOS NECESARIOS
-			var numero_segmentos = Math.ceil(media_circunferencia/anchoForm);
+			var numero_segmentos = Math.ceil(media_circunferencia/hipotenusa_menor);
 			cadena += "SEGMENTOS NECESARIOS: " + numero_segmentos  + separador;
 				textPDF2 += "SEGMENTOS NECESARIOS: " + numero_segmentos + separadorPDF;
-			var superficie_cubierta = numero_segmentos * anchoForm;
+			var superficie_cubierta = numero_segmentos * hipotenusa_menor;
 			var superficie_faltante = circunferencia - superficie_cubierta;
 			//SEPARACIÓN ENTRE SEGMENTOS
 			var superficie_separacion = superficie_faltante/numero_segmentos;
