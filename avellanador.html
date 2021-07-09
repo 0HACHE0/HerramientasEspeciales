@@ -39,6 +39,10 @@
           <li class="nav-item">
             <a class="nav-link" href="muelabisel.html">MUELA - BISEL</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="muelasegmentada.html">MUELA SEGMENTADA</a>
+          </li>  
         </ul>
       </div>
     </nav>
@@ -48,7 +52,7 @@
     <form>
       <div class="row col-md-10 ml-auto mr-auto">
 
-        <div class="col-md-6 ml-auto mr-auto">
+        <div class="col-md-5 ml-auto mr-auto">
 
           <div class="form-group row">
             <p class="fontH col-3 col-form-label">Cliente:</p>
@@ -97,66 +101,66 @@
 
         </div>
 
-        <div class="col-md-6 ml-auto mr-auto">
+        <div class="col-md-5 ml-auto mr-auto">
 
           <div class="row col-md-10 ml-auto mr-auto">
-            <label class="ml-auto mr-auto fontH0">Materiales</label>
+            <p class="ml-auto mr-auto fontH0">Materiales</p>
           </div>
           
           <br>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Bronce:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Bronce:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material1" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Cobalto:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Cobalto:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material2" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
 
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Hierro:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Hierro:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material3" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Manganeso:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Manganeso:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material4" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Niquel:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Niquel:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material5" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Zinc:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Zinc:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material6" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
 
-          <div class="form-group row">
-            <p class="fontH col-4 col-form-label">Grafito:</p>
-            <div class="col-6">
+          <div class="form-group row ml-auto mr-auto">
+            <p class="fontH col-6 col-form-label">Grafito:</p>
+            <div class="col-4">
               <input type="number" class="form-control form-control-sm" id="material7" placeholder="0" min="0" max ="100">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
@@ -429,27 +433,30 @@
 
 
     function validaciones(){
-        //DIAMETRO
-        var diametro = document.getElementById("diametro").value*1;
-        //ANCHO
-        var ancho = document.getElementById("ancho").value*1;
-        //ANGULO
-        var angulo = document.getElementById("angulo").value*1;
-        //DIAMANTE
-        var diamante = document.getElementById("diamante").value*1;
+      //CLIENTE
+      var clienteForm = document.getElementById("cliente").value;
+      //DIAMETRO
+      var diametro = document.getElementById("diametro").value*1;
+      //ANCHO
+      var ancho = document.getElementById("ancho").value*1;
+      //ANGULO
+      var angulo = document.getElementById("angulo").value*1;
+      //DIAMANTE
+      var diamante = document.getElementById("diamante").value*1;
 
-        var porcent = 0;
-        for (var i = 1; i <= 7; i++)
-            porcent+= document.getElementById("material"+i).value * 1;
+      var porcent = 0;
+      for (var i = 1; i <= 7; i++)
+          porcent+= document.getElementById("material"+i).value * 1;
 
-        auxM = porcent;
+      auxM = porcent;
 
-        if(diametro <= 0){imprimeModalInfo("Ingresa un <strong>DIAMETRO</strong> correcto.",2); return 1;}
-        else if(ancho <= 0){imprimeModalInfo("Ingresa un <strong>ANCHO</strong> correcto.",2); return 1;}
-        else if(angulo <= 0 || angulo >= 90){imprimeModalInfo("Ingresa un <strong>ÁNGULO</strong> correcto.",2); return 1;}
-        else if(diamante <= 0){imprimeModalInfo("Ingresa cantidad de <strong>DIAMANTE</strong> correcta.",2); return 1;}
-        else if(porcent <= 0) { imprimeModalInfo("Las cantidades de <strong>MATERIALES</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
-        else return 0;
+      if(clienteForm == ""){imprimeModalInfo("Ingresa un <strong>CLIENTE</strong>.",2); return 1;}
+      else if(diametro <= 0){imprimeModalInfo("Ingresa un <strong>DIAMETRO</strong> correcto.",2); return 1;}
+      else if(ancho <= 0){imprimeModalInfo("Ingresa un <strong>ANCHO</strong> correcto.",2); return 1;}
+      else if(angulo <= 0 || angulo >= 90){imprimeModalInfo("Ingresa un <strong>ÁNGULO</strong> correcto.",2); return 1;}
+      else if(diamante <= 0){imprimeModalInfo("Ingresa cantidad de <strong>DIAMANTE</strong> correcta.",2); return 1;}
+      else if(porcent <= 0) { imprimeModalInfo("Las cantidades de <strong>MATERIALES</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
+      else return 0;
     }
 
     function deshabilitaCheckBox(value){    document.getElementById("bujeros"+value).checked = false;   }
