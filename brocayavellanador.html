@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="eH.css">
 
@@ -52,37 +53,67 @@
     <form>
       <div class="row col-md-10 ml-auto mr-auto">
 
-        <div class="col-md-6 ml-auto mr-auto">
+        <div class="col-md-5 ml-auto mr-auto">
 
-          <div class="form-group row">
+          <div class="form-group row col-md-9 ml-auto mr-auto">
             <p class="fontH col-3 col-form-label">Cliente:</p>
             <div class="col-9">
-              <input type="text" class="form-control form-control-sm" id="cliente">
+              <input type="text" class="form-control form-control-sm" id="cliente" style="text-transform: uppercase">
             </div>
           </div>
 
           <div class="row col-md-10 ml-auto mr-auto">
-            <label class="ml-auto mr-auto fontH0">Pieza</label>
+            <p class="ml-auto mr-auto fontH0">Pieza</p>
           </div>
 
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-9 ml-auto mr-auto">
             <label class="fontH">Diametro:</label>
             <input type="number" class="form-control form-control-sm" id="diametro" placeholder="0" min="0">
           </div>
 
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-9 ml-auto mr-auto">
             <label class="fontH">Ancho:</label>
             <input type="number" class="form-control form-control-sm" id="ancho" placeholder="0" min="0">
           </div>
 
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-9 ml-auto mr-auto">
             <label class="fontH">Largo:</label>
             <input type="number" class="form-control form-control-sm" id="largo" placeholder="0" min="0">
           </div>
 
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-9 ml-auto mr-auto">
             <label class="fontH">Ángulo:</label>
             <input type="number" class="form-control form-control-sm" id="angulo" placeholder="0" min="0">
+          </div>
+        
+
+          <div class="form-group col-md-9 ml-auto mr-auto">
+            <label class="fontH">MESH:</label>
+            <select class="form-select" id="mesh_pieza">
+              <option value="0" selected>Selecciona una opción</option>
+              <option value="1">40/60</option>
+              <option value="2">60/70</option>
+              <option value="3">80/100</option>
+              <option value="4">100/120</option>
+              <option value="5">140/170</option>
+              <option value="6">170/200</option>
+              <option value="7">200/230</option>
+              <option value="8">270/300</option>
+              <option value="9">325</option>
+              <option value="10">400</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-9 ml-auto mr-auto">
+            <label class="fontH">Tipo:</label>
+            <select class="form-select" id="tipo_pieza">
+              <option value="0" selected>Selecciona una opción</option>
+              <option value="1">Sintetico</option>
+              <option value="2">Recubrimiento de titanio</option>
+              <option value="3">Recubrimiento de niquel</option>
+              <option value="4">Recubrimiento de cobre</option>
+              <option value="5">Natural</option>
+            </select>
           </div>
 
         </div>
@@ -90,213 +121,222 @@
 
       <br>
 
-      <div class="row col-md-10 ml-auto mr-auto">
+      <div class="row ml-auto mr-auto">
 
-        <div class="col-md-6 ml-auto mr-auto">
+        <div class="row col-md-10 ml-auto mr-auto">
 
-          <div class="row col-md-12 ml-auto mr-auto">
-            <p class="ml-auto mr-auto fontH0">Materiales Avellanador</p>
-          </div>
-          
-          <br>
+          <div class="col-md-5 ml-auto mr-auto" style="background-color: #292929;">
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Cantidad de Diamante:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="diamante0" placeholder="0" min="0" max ="100">
+            <BR>
+            <div class="row col-md-10 ml-auto mr-auto">
+              <p class="ml-auto mr-auto fontH1">Materiales Avellanador</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
+            
+            <br>
 
-          <br>
-
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Bronce:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material01" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Cantidad de Diamante:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="diamante0" placeholder="0" min="0">
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Cobalto:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material02" placeholder="0" min="0" max ="100">
+            <br>
+
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Bronce:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material01" placeholder="0" min="0">
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
 
-          </div>
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Cobalto:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material02" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Hierro:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material03" placeholder="0" min="0" max ="100">
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Manganeso:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material04" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Hierro:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material03" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Niquel:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material05" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Manganeso:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material04" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Zinc:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material06" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Niquel:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material05" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Grafito:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material07" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Zinc:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material06" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Estaño:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material08" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Grafito:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material07" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Plata:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material09" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Estaño:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material08" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Pirita de Hierro:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material010" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Plata:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material09" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-        </div>
-
-
-        <div class="col-md-6 ml-auto mr-auto">
-
-          <div class="row col-md-12 ml-auto mr-auto">
-            <p class="ml-auto mr-auto fontH0">Materiales Broca</p>
-          </div>
-          
-          <br>
-
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Cantidad de Diamante:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="diamante1" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Pirita de Hierro:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material010" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
+
           </div>
 
-          <br>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Bronce:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material11" placeholder="0" min="0" max ="100">
+          <div class="col-md-5 ml-auto mr-auto" style="background-color: #292929;">
+
+            <BR>
+            <div class="row col-md-12 ml-auto mr-auto">
+              <p class="ml-auto mr-auto fontH1">Materiales Broca</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
+            
+            <br>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Cobalto:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material12" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Cantidad de Diamante:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="diamante1" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
 
-          </div>
+            <br>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Hierro:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material13" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Bronce:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material11" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Manganeso:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material14" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Cobalto:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material12" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
+
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Niquel:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material15" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Hierro:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material13" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Zinc:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material16" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Manganeso:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material14" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Grafito:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material17" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Niquel:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material15" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Estaño:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material18" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Zinc:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material16" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Plata:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material19" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Grafito:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material17" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
-          </div>
 
-          <div class="form-group row">
-            <p class="fontH col-6 col-form-label">Pirita de Hierro:</p>
-            <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material110" placeholder="0" min="0" max ="100">
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Estaño:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material18" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
             </div>
-            <p class="fontH col-2 col-form-label">%</p>
+
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Plata:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material19" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
+            </div>
+
+            <div class="form-group row ml-auto mr-auto">
+              <p class="fontH col-6 col-form-label">Pirita de Hierro:</p>
+              <div class="col-4">
+                <input type="number" class="form-control form-control-sm" id="material110" placeholder="0" min="0" >
+              </div>
+              <p class="fontH col-2 col-form-label">%</p>
+            </div>
+
           </div>
 
-        </div>
+          <BR>
 
-        <div class="form-group col-md-12">
-          <button type="button" class="btn btn-success float-right" onclick="calcular()">CALCULAR</button>
+          <div class="form-group col-md-12">
+            <BR>
+            <button type="button" class="btn btn-success float-right" onclick="calcular()">CALCULAR</button>
+          </div>
+
         </div>
 
       </div>
@@ -329,27 +369,76 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+    <script src="jspdf.min.js"></script>
+
     <script type="text/javascript">
 
     var aux0 = 0;
     var aux1 = 0;
     var buttonCerrar='<button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>';
     var buttonDescargar='<button type="button" class="btn btn-success" onclick="descargar()">DESCARGAR INFORME</button>';
+    //VARIABLES USADAS EN LA IMPRESIÓN DEL PDF (FUNCIÓN)
+    var textPDF0;
+    var textPDF1;
+    var textPDF2;
+    var textPDF3;
+    var textPDF4;
+    var textPDF5;
+
+    var textPDF6;
+    var textPDF7;
+    var textPDF8;
+
+    var headPDF0 = "INFORMACIÓN DEL REGISTRO";
+    var headPDF1 = "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA  + 3%";
+    var headPDF2 = "MEDIDAS DE LA PIEZA CALCULADAS";
+    var headPDF3 = "VOLUMEN DE AVELLANADOR";
+    var headPDF4 = "MATRIZ DE AVELLANADOR";
+    var headPDF5 = "MATERIALES DE AVELLANADOR";
+    
+    var headPDF6 = "VOLUMEN DE BROCA";
+    var headPDF7 = "MATRIZ DE BROCA";
+    var headPDF8 = "MATERIALES DE BROCA";
+
+    var clientePDF;
+    var medidasPDF;
+    var materialesPDF1;
+    var materialesPDF2;
+
 
     function calcular(){
+
+      //INICIALIZACIÓN
+        textPDF0 = "";
+        textPDF1 = "";
+        textPDF2 = "";
+        textPDF3 = "";
+        textPDF4 = "";
+        textPDF5 = "";
+        
+        textPDF6 = "";
+        textPDF7 = "";
+        textPDF8 = "";
+
+        clientePDF = "";
+        medidasPDF = "";
+        materialesPDF1 = "";
+        materialesPDF2 = "";
 
         var cadena = "";
         var cadena0 = "";
         var cadena1 = "";
         var separador = "<br>";
-        var mm = "mm";
-        var mm3 = "mm3";
-        var gr = "gr";
-        var ang = "°";
-        var porc = "%";
+        var mm = " mm";
+        var mm3 = " mm³";
+        var gr = " gr";
+        var ang = " °";
+        var porc = " %";
         var negra0 = "<strong>";
         var negra1 = "</strong>";
-        //cadena += ": " +  + mm + separador;
+      
+        //VARIABLES IMPRESIÓN EN PDF
+        var separadorPDF = "\n";
 
         //CONSTANTES
         var d0 = 0.0571;      //Diamante
@@ -379,34 +468,77 @@
         if (validaciones() != 1){
 
             cadena += separador;
-            cadena += negra0 + "MEDIDAS DE LA PIEZA INGRESADAS AL SISTEMA  + 3%" + negra1 +separador;
-            //DATOS QUE INGRESA EL USUARIO
-            //DIAMETRO
-            var diametroForm = document.getElementById("diametro").value * 1;
-            cadena += "DIAMETRO: " + diametroForm + mm + separador;
-            //ANCHO
-            var anchoForm = document.getElementById("ancho").value * 1;
-            cadena += "ANCHO: " + anchoForm + mm + separador;
-            //LARGO
-            var largoForm = document.getElementById("largo").value * 1;
-            cadena += "LARGO: " + largoForm + mm + separador;
-            //ANGULO
-            var anguloForm = document.getElementById("angulo").value * 1;
-            cadena += "ÁNGULO: " + anguloForm + ang + separador;
-            //DIAMANTE PARA AVELLANADOR
-            var diamanteForm0 = document.getElementById("diamante0").value * 1;
-            cadena += "DIAMANTE PARA AVELLANADOR: " + diamanteForm0 + separador;
-            //DIAMANTE PARA BROCA
-            var diamanteForm1 = document.getElementById("diamante1").value * 1;
-            cadena += "DIAMANTE PARA BROCA: " + diamanteForm1 + separador;
+            cadena += negra0 + headPDF0 + negra1 + separador;
+
+            //CLIENTE
+            var clienteForm = document.getElementById("cliente").value.toUpperCase();
+            clientePDF = clienteForm;
+            cadena += "CLIENTE: " + clienteForm + separador;
+              textPDF0 += "CLIENTE: " + clienteForm + separadorPDF;
+
+            //FECHA
+            getCurrentDate();
+            cadena += "FECHA: " + completeDateModal + separador;
+              textPDF0 += "FECHA: " + completeDateModal + separadorPDF;
+
+
+            var mesh_form = document.getElementById("mesh_pieza");
+            var mesh_pieza = mesh_form.options[mesh_form.selectedIndex].text;
+
+            cadena += "MESH: " + mesh_pieza + separador;
+              textPDF0 += "MESH: " + mesh_pieza + separadorPDF;
+
+            var tipo_form = document.getElementById("tipo_pieza");
+            var tipo_pieza = tipo_form.options[tipo_form.selectedIndex].text;
+
+            cadena += "TIPO: " + tipo_pieza + separador;
+              textPDF0 += "TIPO: " + tipo_pieza + separadorPDF;
 
             cadena += separador;
 
 
-            cadena += negra0 + "MEDIDAS DE LA PIEZA QUE SE CALCULAN" + negra1 +separador;
+
+
+            cadena += negra0 + headPDF1 + negra1 + separador;
+            //DIAMETRO
+            var diametroForm = document.getElementById("diametro").value * 1;
+            cadena += "DIAMETRO: " + diametroForm + mm + separador;
+              textPDF1 += "DIAMETRO: " + diametroForm + mm + separadorPDF;
+            //ANCHO
+            var anchoForm = document.getElementById("ancho").value * 1;
+            cadena += "ANCHO: " + anchoForm + mm + separador;
+              textPDF1 += "ANCHO: " + anchoForm + mm + separadorPDF;
+            //LARGO
+            var largoForm = document.getElementById("largo").value * 1;
+            cadena += "LARGO: " + largoForm + mm + separador;
+              textPDF1 += "LARGO: " + largoForm + mm + separadorPDF;
+            //ANGULO
+            var anguloForm = document.getElementById("angulo").value * 1;
+            cadena += "ÁNGULO: " + anguloForm + ang + separador;
+              textPDF1 += "ÁNGULO: " + anguloForm + ang + separadorPDF;
+            //DIAMANTE PARA AVELLANADOR
+            var diamanteForm0 = document.getElementById("diamante0").value * 1;
+            cadena += "DIAMANTE PARA AVELLANADOR: " + diamanteForm0 + separador;
+              textPDF1 += "DIAMANTE PARA AVELLANADOR: " + diamanteForm0 + separadorPDF;
+            //DIAMANTE PARA BROCA
+            var diamanteForm1 = document.getElementById("diamante1").value * 1;
+            cadena += "DIAMANTE PARA BROCA: " + diamanteForm1 + separador;
+              textPDF1 += "DIAMANTE PARA BROCA: " + diamanteForm1 + separadorPDF;
+
+           
+            medidasPDF = diametroForm + "x" + anchoForm + "x" + largoForm+ " - " + anguloForm + "° - " + diamanteForm0 +"aD/" + diamanteForm1 + "bD" ;
+            cadena += separador;
+
+
+
+
+
+            cadena += negra0 + headPDF2 + negra1 +separador;
+
             //RADIO
             var r = diametroForm / 2;
-            cadena += "RADIO: " + r + mm + separador;
+            cadena += "RADIO: " + r.toFixed(2) + mm + separador;
+              textPDF2 += "RADIO: " + r.toFixed(2) + mm + separadorPDF;
             //RADIO CUADRADO
             var rCuadrado = r * r; 
 
@@ -418,17 +550,21 @@
             var rad = (Math.PI * angulo ) / 180 ;
             var anguloCal = Math.cos(rad);
             var hipotenusa = 2.2 / anguloCal;
-            cadena += "HIPOTENUSA AVELLANADOR: " + hipotenusa + mm + separador;
+            cadena += "HIPOTENUSA AVELLANADOR: " + hipotenusa.toFixed(2) + mm + separador;
+              textPDF2 += "HIPOTENUSA AVELLANADOR: " + hipotenusa.toFixed(2) + mm + separadorPDF;
+
             //CATETO
             var b2 = (hipotenusa*hipotenusa) - (2.2 * 2.2);
             var cateto = Math.sqrt(b2);
-            cadena += "ALTURA AVELLANADOR: " + cateto + mm + separador;
+            cadena += "ALTURA AVELLANADOR: " + cateto.toFixed(2) + mm + separador;
+              textPDF2 += "ALTURA AVELLANADOR: " + cateto.toFixed(2) + mm + separadorPDF;
 
 
             //CALCULO VOLUMEN 1
             //RADIO MAYOR 1
-            var R1 = r + 2.2;
-            cadena += "RADIO EXTERIOR: " + R1 + mm + separador;
+            var R1= r + 2.2;
+            cadena += "RADIO EXTERIOR: " + R1.toFixed(2) + mm + separador;
+              textPDF2 += "RADIO EXTERIOR: " + R1.toFixed(2) + mm + separadorPDF;
             var R1Cuadrado = R1 * R1;
             //RADIO MENOR 1
             var R2 = r + 1;
@@ -459,7 +595,8 @@
             var altura = cateto + 0.8;
             //RADIO ANCHURA
             var rBeta = r - anchoForm;
-            cadena += "RADIO INTERIOR: " + rBeta + mm + separador;
+            cadena += "RADIO INTERIOR: " + rBeta.toFixed(2) + mm + separador;
+              textPDF2 += "RADIO INTERIOR: " + rBeta.toFixed(2) + mm + separadorPDF;
             var rBetaCuadrado = rBeta * rBeta;
             //VOLUMEN 3 1
             var S31 = Math.PI * rCuadrado * altura;
@@ -498,19 +635,23 @@
             //VOLUMENES TOTALES SIN DIAMANTE
             //VOLUMEN TOTAL AVELLANADOR SIN DIAMANTE
             var VT0 = V1 + V2 + V3 + V4;
-            cadena0 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0 + mm3 + separador;
+            cadena0 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0.toFixed(2) + mm3 + separador;
+              textPDF3 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0.toFixed(2) + mm3 + separadorPDF;
             //VOLUMEN TOTAL BROCA SIN DIAMANTE
             var VT1 = V5;
-            cadena1 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT1 + mm3 + separador;
+            cadena1 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT1.toFixed(2) + mm3 + separador;
+              textPDF6 += "VOLUMEN TOTAL SIN DIAMANTE: " + VT0.toFixed(2) + mm3 + separadorPDF;
 
 
             //CANTIDAD DE DIAMANTE (SE PASA A %)
             //DIAMANTE AVELLANADOR
             var diamante0 = (diamanteForm0 * 4.4) / 100;
-            cadena0 += "PORCENTAJE DE DIAMANTE: " + diamante0 + porc + separador;
+            cadena0 += "PORCENTAJE DE DIAMANTE: " + diamante0.toFixed(2) + porc + separador;
+              textPDF3 += "PORCENTAJE DE DIAMANTE: " + diamante0.toFixed(2) + porc + separadorPDF;
             //DIAMANTE BROCA
             var diamante1 = (diamanteForm1 * 4.4) / 100;
-            cadena1 += "PORCENTAJE DE DIAMANTE: " + diamante1 + porc + separador;
+            cadena1 += "PORCENTAJE DE DIAMANTE: " + diamante1.toFixed(2) + porc + separador;
+              textPDF6 += "PORCENTAJE DE DIAMANTE: " + diamante1.toFixed(2) + porc + separadorPDF;
 
 
             //KILATES Y GRAMOS DE DIAMANTE POR PIEZA
@@ -527,19 +668,23 @@
             //VOLUMENES DE DIAMANTE POR PIEZA
             //VOLUMEN DIAMANTE AVELLANADOR
             var VD0 = kilates0 * d0 * 1000;
-            cadena0 += "VOLUMEN DIAMANTE: " + VD0 + mm3 + separador;
+            cadena0 += "VOLUMEN DIAMANTE: " + VD0.toFixed(2) + mm3 + separador;
+              textPDF3 += "VOLUMEN DIAMANTE: " + VD0.toFixed(2) + mm3 + separadorPDF;
             //VOLUMEN DIAMANTE BROCA
             var VD1 = kilates1 * d0 * 1000;
-            cadena1 += "VOLUMEN DIAMANTE: " + VD1 + mm3 + separador;
+            cadena1 += "VOLUMEN DIAMANTE: " + VD1.toFixed(2) + mm3 + separador;
+              textPDF6 += "VOLUMEN DIAMANTE: " + VD1.toFixed(2) + mm3 + separadorPDF;
 
 //3% EXTRA
             //VOLUMENES TOTALES CON DIAMANTE
             //VOLUMEN TOTAL AVELLANADOR CON DIAMANTE
             var vol0mm = (VT0 - VD0) * 1.03;
-            cadena0 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm + mm3 + separador;
+            cadena0 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm.toFixed(2) + mm3 + separador;
+              textPDF3 += "VOLUMEN TOTAL CON DIAMANTE: " + vol0mm.toFixed(2) + mm3 + separadorPDF;
             //VOLUMEN TOTAL BROCA CON DIAMANTE
             var vol1mm = (VT1 - VD1) * 1.03;
-            cadena1 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm + mm3 + separador;
+            cadena1 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm.toFixed(2) + mm3 + separador;
+              textPDF6 += "VOLUMEN TOTAL CON DIAMANTE: " + vol1mm.toFixed(2) + mm3 + separadorPDF;
 
             cadena += negra0 + "CALCULOS DEL VOLUMEN DE AVELLANADOR" + negra1 +separador;
             cadena += cadena0;
@@ -562,31 +707,51 @@
                 auxMaterial = document.getElementById("material0"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
                 if (auxMaterial!=0){ 
-                    if(i==1){         m01 = (d1 * vol0mm) / 1000;  cadena0 += material1n + ": " + m01 + separador;    }
-                    else if(i==2){    m02 = (d2 * vol0mm) / 1000;  cadena0 += material2n + ": " + m02 + separador;    }
-                    else if(i==3){    m03 = (d3 * vol0mm) / 1000;  cadena0 += material3n + ": " + m03 + separador;    }
-                    else if(i==4){    m04 = (d4 * vol0mm) / 1000;  cadena0 += material4n + ": " + m04 + separador;    }
-                    else if(i==5){    m05 = (d5 * vol0mm) / 1000;  cadena0 += material5n + ": " + m05 + separador;    }
-                    else if(i==6){    m06 = (d6 * vol0mm) / 1000;  cadena0 += material6n + ": " + m06 + separador;    }
-                    else if(i==7){    m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07 + separador;   }
-                    else if(i==8){    m08 = (d8 * vol0mm) / 1000;  cadena0 += material8n + ": " + m08 + separador;    }
-                    else if(i==9){    m09 = (d9 * vol0mm) / 1000;  cadena0 += material9n + ": " + m09 + separador;    }
-                    else{   m010 = (d10 * vol0mm) / 1000;  cadena0 += material10n + ": " + m010 + separador;  }
+                    if(i==1){         m01 = (d1 * vol0mm) / 1000;  cadena0 += material1n + ": " + m01.toFixed(2) + separador;   
+                      textPDF4 += material1n+": " + m01.toFixed(2) + separadorPDF;}
+                    else if(i==2){    m02 = (d2 * vol0mm) / 1000;  cadena0 += material2n + ": " + m02.toFixed(2) + separador;   
+                      textPDF4 += material2n+": " + m02.toFixed(2) + separadorPDF;}
+                    else if(i==3){    m03 = (d3 * vol0mm) / 1000;  cadena0 += material3n + ": " + m03.toFixed(2) + separador;   
+                      textPDF4 += material3n+": " + m03.toFixed(2) + separadorPDF;}
+                    else if(i==4){    m04 = (d4 * vol0mm) / 1000;  cadena0 += material4n + ": " + m04.toFixed(2) + separador;   
+                      textPDF4 += material4n+": " + m04.toFixed(2) + separadorPDF;}
+                    else if(i==5){    m05 = (d5 * vol0mm) / 1000;  cadena0 += material5n + ": " + m05.toFixed(2) + separador;   
+                      textPDF4 += material5n+": " + m05.toFixed(2) + separadorPDF;}
+                    else if(i==6){    m06 = (d6 * vol0mm) / 1000;  cadena0 += material6n + ": " + m06.toFixed(2) + separador;   
+                      textPDF4 += material6n+": " + m06.toFixed(2) + separadorPDF;}
+                    else if(i==7){    m07 = (d7 * vol0mm) / 1000;  cadena0 += material7n + ": " + m07.toFixed(2) + separador;   
+                      textPDF4 += material7n+": " + m07.toFixed(2) + separadorPDF;}
+                    else if(i==8){    m08 = (d8 * vol0mm) / 1000;  cadena0 += material8n + ": " + m08.toFixed(2) + separador;   
+                      textPDF4 += material8n+": " + m08.toFixed(2) + separadorPDF;}
+                    else if(i==9){    m09 = (d9 * vol0mm) / 1000;  cadena0 += material9n + ": " + m09.toFixed(2) + separador;   
+                      textPDF4 += material9n+": " + m09.toFixed(2) + separadorPDF;}
+                    else{   m010 = (d10 * vol0mm) / 1000;  cadena0 += material10n + ": " + m010.toFixed(2) + separador;  
+                      textPDF4 += material10n+": " + m010.toFixed(2) + separadorPDF;}
                 }
 
                 auxMaterial = document.getElementById("material1"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
-                if (auxMaterial!=0){
-                    if(i==1){         m11 = (d1 * vol1mm) / 1000;  cadena1 += material1n + ": " + m11 + separador;    }
-                    else if(i==2){    m12 = (d2 * vol1mm) / 1000;  cadena1 += material2n + ": " + m12 + separador;    }
-                    else if(i==3){    m13 = (d3 * vol1mm) / 1000;  cadena1 += material3n + ": " + m13 + separador;    }
-                    else if(i==4){    m14 = (d4 * vol1mm) / 1000;  cadena1 += material4n + ": " + m14 + separador;    }
-                    else if(i==5){    m15 = (d5 * vol1mm) / 1000;  cadena1 += material5n + ": " + m15 + separador;    }
-                    else if(i==6){    m16 = (d6 * vol1mm) / 1000;  cadena1 += material6n + ": " + m16 + separador;    }
-                    else if(i==7){    m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17 + separador;    }
-                    else if(i==8){    m18 = (d8 * vol1mm) / 1000;  cadena1 += material8n + ": " + m18 + separador;    }
-                    else if(i==9){    m19 = (d9 * vol1mm) / 1000;  cadena1 += material9n + ": " + m19 + separador;    }
-                    else{                m110 = (d10 * vol1mm) / 1000;  cadena1 += material10n + ": " + m110 + separador;}
+                if (auxMaterial!=0){ 
+                    if(i==1){         m11 = (d1 * vol1mm) / 1000;  cadena1 += material1n + ": " + m11.toFixed(2) + separador;   
+                      textPDF7 += material1n+": " + m11.toFixed(2) + separadorPDF;}
+                    else if(i==2){    m12 = (d2 * vol1mm) / 1000;  cadena1 += material2n + ": " + m12.toFixed(2) + separador;   
+                      textPDF7 += material2n+": " + m12.toFixed(2) + separadorPDF;}
+                    else if(i==3){    m13 = (d3 * vol1mm) / 1000;  cadena1 += material3n + ": " + m13.toFixed(2) + separador;   
+                      textPDF7 += material3n+": " + m13.toFixed(2) + separadorPDF;}
+                    else if(i==4){    m14 = (d4 * vol1mm) / 1000;  cadena1 += material4n + ": " + m14.toFixed(2) + separador;   
+                      textPDF7 += material4n+": " + m14.toFixed(2) + separadorPDF;}
+                    else if(i==5){    m15 = (d5 * vol1mm) / 1000;  cadena1 += material5n + ": " + m15.toFixed(2) + separador;   
+                      textPDF7 += material5n+": " + m15.toFixed(2) + separadorPDF;}
+                    else if(i==6){    m16 = (d6 * vol1mm) / 1000;  cadena1 += material6n + ": " + m16.toFixed(2) + separador;   
+                      textPDF7 += material6n+": " + m16.toFixed(2) + separadorPDF;}
+                    else if(i==7){    m17 = (d7 * vol1mm) / 1000;  cadena1 += material7n + ": " + m17.toFixed(2) + separador;   
+                      textPDF7 += material7n+": " + m17.toFixed(2) + separadorPDF;}
+                    else if(i==8){    m18 = (d8 * vol1mm) / 1000;  cadena1 += material8n + ": " + m18.toFixed(2) + separador;   
+                      textPDF7 += material8n+": " + m18.toFixed(2) + separadorPDF;}
+                    else if(i==9){    m19 = (d9 * vol1mm) / 1000;  cadena1 += material9n + ": " + m19.toFixed(2) + separador;   
+                      textPDF7 += material9n+": " + m19.toFixed(2) + separadorPDF;}
+                    else{   m110 = (d10 * vol1mm) / 1000;  cadena1 += material10n + ": " + m110.toFixed(2) + separador;  
+                      textPDF7 += material10n+": " + m110.toFixed(2) + separadorPDF;}
                 }
             }
 
@@ -604,39 +769,81 @@
             var g01=0, g02=0, g03=0, g04=0, g05=0, g06=0, g07=0, g08=0, g09=0, g010=0;
             var g11=0, g12=0, g13=0, g14=0, g15=0, g16=0, g17=0, g18=0, g19=0, g110=0;
 
-            cadena0 += material0n+"("+diamante0+"%): " + g0 + gr + separador;
-            cadena1 += material0n+"("+diamante1+"%): " + g1 + gr + separador;
+            cadena0 += material0n+"("+diamante0+"%): " + g0.toFixed(2) + gr + separador;
+            textPDF5 += material0n+"("+diamante0+"%): " + g0.toFixed(2) + gr + separadorPDF;
+            cadena1 += material0n+"("+diamante1+"%): " + g1.toFixed(2) + gr + separador;
+            textPDF8 += material0n+"("+diamante1+"%): " + g1.toFixed(2) + gr + separadorPDF;
 
             for (var i = 1; i <= 10; i++) {
 
                 auxMaterial = document.getElementById("material0"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (AVELLANADOR)
                 if (auxMaterial!=0){
-                    if(i==1){         g01 = (auxMaterial * m01) / 100;  cadena0 += material1n + "(" + auxMaterial + "%): " + g01 + gr + separador;    }
-                    else if(i==2){    g02 = (auxMaterial * m02) / 100;  cadena0 += material2n + "(" + auxMaterial + "%): " + g02 + gr + separador;    }
-                    else if(i==3){    g03 = (auxMaterial * m03) / 100;  cadena0 += material3n + "(" + auxMaterial + "%): " + g03 + gr + separador;    }
-                    else if(i==4){    g04 = (auxMaterial * m04) / 100;  cadena0 += material4n + "(" + auxMaterial + "%): " + g04 + gr + separador;    }
-                    else if(i==5){    g05 = (auxMaterial * m05) / 100;  cadena0 += material5n + "(" + auxMaterial + "%): " + g05 + gr + separador;    }
-                    else if(i==6){    g06 = (auxMaterial * m06) / 100;  cadena0 += material6n + "(" + auxMaterial + "%): " + g06 + gr + separador;    }
-                    else if(i==7){    g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07 + gr + separador;     }
-                    else if(i==8){    g08 = (auxMaterial * m08) / 100;  cadena0 += material8n + "(" + auxMaterial + "%): " + g08 + gr + separador;     }
-                    else if(i==9){    g09 = (auxMaterial * m09) / 100;  cadena0 += material9n + "(" + auxMaterial + "%): " + g09 + gr + separador;     }
-                    else{               g010 = (auxMaterial * m010) / 100;  cadena0 += material10n + "(" + auxMaterial + "%): " + g010 + gr + separador}
+                    if(i==1){         g01 = (auxMaterial * m01) / 100;  cadena0 += material1n + "(" + auxMaterial + "%): " + g01.toFixed(2) + gr + separador;    
+                      textPDF5 += material1n+"("+auxMaterial+"%): " + g01.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "B";}
+                    else if(i==2){    g02 = (auxMaterial * m02) / 100;  cadena0 += material2n + "(" + auxMaterial + "%): " + g02.toFixed(2) + gr + separador;    
+                      textPDF5 += material2n+"("+auxMaterial+"%): " + g02.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "C";}
+                    else if(i==3){    g03 = (auxMaterial * m03) / 100;  cadena0 += material3n + "(" + auxMaterial + "%): " + g03.toFixed(2) + gr + separador;    
+                      textPDF5 += material3n+"("+auxMaterial+"%): " + g03.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "H";}
+                    else if(i==4){    g04 = (auxMaterial * m04) / 100;  cadena0 += material4n + "(" + auxMaterial + "%): " + g04.toFixed(2) + gr + separador;    
+                      textPDF5 += material4n+"("+auxMaterial+"%): " + g04.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "M";}
+                    else if(i==5){    g05 = (auxMaterial * m05) / 100;  cadena0 += material5n + "(" + auxMaterial + "%): " + g05.toFixed(2) + gr + separador;    
+                      textPDF5 += material5n+"("+auxMaterial+"%): " + g05.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "N";}
+                    else if(i==6){    g06 = (auxMaterial * m06) / 100;  cadena0 += material6n + "(" + auxMaterial + "%): " + g06.toFixed(2) + gr + separador;    
+                      textPDF5 += material6n+"("+auxMaterial+"%): " + g06.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "Z";}
+                    else if(i==7){    g07 = (auxMaterial * m07) / 100;  cadena0 += material7n + "(" + auxMaterial + "%): " + g07.toFixed(2) + gr + separador;   
+                      textPDF5 += material7n+"("+auxMaterial+"%): " + g07.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "G";}
+                    else if(i==8){    g08 = (auxMaterial * m08) / 100;  cadena0 += material8n + "(" + auxMaterial + "%): " + g08.toFixed(2) + gr + separador;     
+                      textPDF5 += material8n+"("+auxMaterial+"%): " + g08.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "E";}
+                    else if(i==9){    g09 = (auxMaterial * m09) / 100;  cadena0 += material9n + "(" + auxMaterial + "%): " + g09.toFixed(2) + gr + separador;     
+                      textPDF5 += material9n+"("+auxMaterial+"%): " + g09.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "P";}
+                    else{               g010 = (auxMaterial * m010) / 100;  cadena0 += material10n + "(" + auxMaterial + "%): " + g010.toFixed(2) + gr + separador
+                      textPDF5 += material10n+"("+auxMaterial+"%): " + g010.toFixed(2) + gr + separadorPDF;
+                      materialesPDF1 += "|" + auxMaterial + "PH";}
                 }
 
                 auxMaterial = document.getElementById("material1"+i).value * 1;
                 //VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0. (BROCA)
                 if (auxMaterial!=0){
-                    if(i==1){         g11 = (auxMaterial * m11) / 100;  cadena1 += material1n + "(" + auxMaterial + "%): " + g11 + gr + separador;    }
-                    else if(i==2){    g12 = (auxMaterial * m12) / 100;  cadena1 += material2n + "(" + auxMaterial + "%): " + g12 + gr + separador;    }
-                    else if(i==3){    g13 = (auxMaterial * m13) / 100;  cadena1 += material3n + "(" + auxMaterial + "%): " + g13 + gr + separador;    }
-                    else if(i==4){    g14 = (auxMaterial * m14) / 100;  cadena1 += material4n + "(" + auxMaterial + "%): " + g14 + gr + separador;    }
-                    else if(i==5){    g15 = (auxMaterial * m15) / 100;  cadena1 += material5n + "(" + auxMaterial + "%): " + g15 + gr + separador;    }
-                    else if(i==6){    g16 = (auxMaterial * m16) / 100;  cadena1 += material6n + "(" + auxMaterial + "%): " + g16 + gr + separador;    }
-                    else if(i==7){    g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17 + gr + separador;    }
-                    else if(i==8){    g18 = (auxMaterial * m18) / 100;  cadena1 += material8n + "(" + auxMaterial + "%): " + g18 + gr + separador;    }
-                    else if(i==9){    g19 = (auxMaterial * m19) / 100;  cadena1 += material9n + "(" + auxMaterial + "%): " + g19 + gr + separador;    }
-                    else{                 g110 = (auxMaterial * m110) / 100;  cadena1 += material10n + "(" + auxMaterial + "%): " + g110 + gr + separador;}
+                    if(i==1){         g11 = (auxMaterial * m11) / 100;  cadena1 += material1n + "(" + auxMaterial + "%): " + g11.toFixed(2) + gr + separador;    
+                      textPDF8 += material1n+"("+auxMaterial+"%): " + g11.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "B";}
+                    else if(i==2){    g12 = (auxMaterial * m12) / 100;  cadena1 += material2n + "(" + auxMaterial + "%): " + g12.toFixed(2) + gr + separador;    
+                      textPDF8 += material2n+"("+auxMaterial+"%): " + g12.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "C";}
+                    else if(i==3){    g13 = (auxMaterial * m13) / 100;  cadena1 += material3n + "(" + auxMaterial + "%): " + g13.toFixed(2) + gr + separador;    
+                      textPDF8 += material3n+"("+auxMaterial+"%): " + g13.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "H";}
+                    else if(i==4){    g14 = (auxMaterial * m14) / 100;  cadena1 += material4n + "(" + auxMaterial + "%): " + g14.toFixed(2) + gr + separador;    
+                      textPDF8 += material4n+"("+auxMaterial+"%): " + g14.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "M";}
+                    else if(i==5){    g15 = (auxMaterial * m15) / 100;  cadena1 += material5n + "(" + auxMaterial + "%): " + g15.toFixed(2) + gr + separador;    
+                      textPDF8 += material5n+"("+auxMaterial+"%): " + g15.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "N";}
+                    else if(i==6){    g16 = (auxMaterial * m16) / 100;  cadena1 += material6n + "(" + auxMaterial + "%): " + g16.toFixed(2) + gr + separador;    
+                      textPDF8 += material6n+"("+auxMaterial+"%): " + g16.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "Z";}
+                    else if(i==7){    g17 = (auxMaterial * m17) / 100;  cadena1 += material7n + "(" + auxMaterial + "%): " + g17.toFixed(2) + gr + separador;    
+                      textPDF8 += material7n+"("+auxMaterial+"%): " + g17.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "G";}
+                    else if(i==8){    g18 = (auxMaterial * m18) / 100;  cadena1 += material8n + "(" + auxMaterial + "%): " + g18.toFixed(2) + gr + separador;    
+                      textPDF8 += material8n+"("+auxMaterial+"%): " + g18.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "E";}
+                    else if(i==9){    g19 = (auxMaterial * m19) / 100;  cadena1 += material9n + "(" + auxMaterial + "%): " + g19.toFixed(2) + gr + separador;    
+                      textPDF8 += material9n+"("+auxMaterial+"%): " + g19.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "P";}
+                    else{                 g110 = (auxMaterial * m110) / 100;  cadena1 += material10n + "(" + auxMaterial + "%): " + g110.toFixed(2) + gr + separador;
+                      textPDF8 += material10n+"("+auxMaterial+"%): " + g110.toFixed(2) + gr + separadorPDF;
+                      materialesPDF2 += "|" + auxMaterial + "PH";}
                 }
             }
 
@@ -655,6 +862,10 @@
     }
 
     function validaciones(){
+      //MESH
+      var meshForm = document.getElementById("mesh_pieza").value * 1;
+      //TIPO
+      var tipoForm = document.getElementById("tipo_pieza").value * 1;
       //CLIENTE
       var clienteForm = document.getElementById("cliente").value;
       //DIAMETRO
@@ -687,6 +898,8 @@
       else if (anguloForm <= 0 || anguloForm >= 90){imprimeModalInfo("Ingresa un <strong>ÁNGULO</strong> correcto.",2); return 1;}
       else if(diamanteForm0 <= 0){imprimeModalInfo("Ingresa cantidad de <strong>DIAMANTE</strong> para <strong>AVELLANADOR</strong>.",2); return 1;}
       else if(diamanteForm1 <= 0){imprimeModalInfo("Ingresa cantidad de <strong>DIAMANTE</strong> para <strong>BROCA</strong>.",2); return 1;}
+      else if(meshForm == 0 ){imprimeModalInfo("Ingresa un <strong>MESH</strong> correcto.",2); return 1;}
+      else if(tipoForm == 0 ){imprimeModalInfo("Ingresa un <strong>TIPO</strong> correcto.",2); return 1;}
       else if(porcent0 <= 0) { imprimeModalInfo("Las cantidades de MATERIALES para <strong>AVELLANADOR</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
       else if(porcent1 <= 0) { imprimeModalInfo("Las cantidades de MATERIALES para <strong>BROCA</strong> es 0%.<br><br>Debes agregar al menos un porcentaje.",2); return 1; }
       else return 0;
@@ -718,8 +931,114 @@
         $('#modalH').modal('show');
     }
 
+    //VARIABLES PARA LA FECHA
+    var year;
+    var month;
+    var day;
+    var completeDate;
+    var completeDateModal;
+    
+    //CURRENT DATE FOR PDF
+    function getCurrentDate(){
+        var dateNowX = new Date();
+        year = dateNowX.getFullYear();
+        month = dateNowX.getMonth()+1;
+        if (month<10)
+              month = "0"+month;
+        day = dateNowX.getDate();
+        if (day<10)
+              day = "0"+day;
+        
+          completeDate = year+"-"+month+"-"+day;
+          completeDateModal = year+"/"+month+"/"+day;
+    }
+
     function descargar(){
-        alert("I'M STILL CODING THIS SHIT");
+      var doc = new jsPDF();
+      getCurrentDate();
+
+      
+      //PARTE 0 DEL PDF
+      //COLOR DE FUENTE  (AZUL) (50,80,200)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+      doc.text(20, 50, headPDF0);
+      //COLOR DE FUENTE  (AZUL) (50,80,200)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+      doc.text(20, 55, textPDF0);
+
+      //PARTE 1 DEL PDF
+      //COLOR DE FUENTE (NEGRO) (50,50,50)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+      doc.text(20, 76, headPDF1);
+      //COLOR DE FUENTE (NEGRO) (50,50,50)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+      doc.text(20, 81, textPDF1);
+
+      //PARTE 2 DEL PDF
+      //COLOR DE FUENTE (NEGRO) (50,50,50)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+      doc.text(20, 112, headPDF2);
+      //COLOR DE FUENTE (NEGRO) (50,50,50)
+        doc.setTextColor(50,50,50);
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+      doc.text(20, 117, textPDF2);
+
+      //PARTE 3 DEL PDF
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 142, headPDF3);      
+        doc.setTextColor(50,80,200);
+      doc.text(120, 142, headPDF6);  
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 147, textPDF3);      
+        doc.setTextColor(50,80,200);
+      doc.text(120, 147, textPDF6);
+
+      //PARTE 4 DEL PDF        
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 170, headPDF4);
+        doc.setTextColor(50,80,200);    
+      doc.text(120, 170, headPDF7);
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 175, textPDF4);      
+        doc.setTextColor(50,80,200);
+      doc.text(120, 175, textPDF7);
+
+      //PARTE 5 DEL PDF
+      //TAMAÑO DE FUENTE HEAD
+        doc.setFontSize(16);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 225, headPDF5);     
+        doc.setTextColor(50,80,200);
+      doc.text(120, 225, headPDF8);
+      //TAMAÑO DE FUENTE TEXT
+        doc.setFontSize(10);
+        doc.setTextColor(200,50,80);
+      doc.text(20, 230, textPDF5);      
+        doc.setTextColor(50,80,200);
+      doc.text(120, 230, textPDF8);
+
+
+      //NOMBRE DEL ARCHIVO
+      doc.save(clientePDF +" - BROCA/AVELLANADOR - "+ medidasPDF + materialesPDF1 + "(A) " + materialesPDF2 + "(B).pdf");
     }
 
     </script>
