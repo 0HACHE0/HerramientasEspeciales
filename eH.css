@@ -7,6 +7,11 @@
 	font-size: 35px;
 	text-align: center;
 }
+.fontH1{
+	color: #f1f1f1;
+	font-size: 30px;
+	text-align: center;
+}
 body {
   background-color: #1f1f1f;
 }
