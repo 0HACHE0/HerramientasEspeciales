@@ -143,7 +143,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Bronce:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material1" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material1" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -151,7 +151,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Cobalto:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material2" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material2" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
 
@@ -160,7 +160,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Hierro:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material3" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material3" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -168,7 +168,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Manganeso:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material4" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material4" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -176,7 +176,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Niquel:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material5" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material5" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -184,7 +184,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Zinc:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material6" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material6" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -192,7 +192,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Grafito:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material7" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material7" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -200,7 +200,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Estaño:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material8" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material8" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -208,7 +208,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Plata:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material9" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material9" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -216,7 +216,7 @@
           <div class="form-group row ml-auto mr-auto">
             <p class="fontH col-6 col-form-label">Pirita de Hierro:</p>
             <div class="col-4">
-              <input type="number" class="form-control form-control-sm" id="material10" placeholder="0" min="0" max ="100">
+              <input type="number" class="form-control form-control-sm" id="material10" placeholder="0" min="0">
             </div>
             <p class="fontH col-2 col-form-label">%</p>
           </div>
@@ -273,7 +273,7 @@
     var textPDF4;
     var textPDF5;
 
-	var headPDF0 = "INFORMACIÓN DEL REGISTRO";
+    var headPDF0 = "INFORMACIÓN DEL REGISTRO";
     var headPDF1 = "MEDIDAS DE LA PIEZA INGRESADAS";
     var headPDF2 = "MEDIDAS DE LA PIEZA CALCULADAS";
     var headPDF3 = "CALCULOS DEL VOLUMEN";
@@ -288,21 +288,21 @@
 
 		//INICIALIZACIÓN
 		textPDF0 = "";
-	    textPDF1 = "";
-	    textPDF2 = "";
-	    textPDF3 = "";
-	    textPDF4 = "";
-	    textPDF5 = "";
+    textPDF1 = "";
+    textPDF2 = "";
+    textPDF3 = "";
+    textPDF4 = "";
+    textPDF5 = "";
 
-	    clientePDF = "";
-	    medidasPDF = "";
-	    materialesPDF = "";
+    clientePDF = "";
+    medidasPDF = "";
+    materialesPDF = "";
 
 		//VARIABLES IMPRESIÓN EN MODAL
 		var cadena = "";
 		var separador = "<br>";
 		var mm = " mm";
-		var mm3 = " mm3";
+		var mm3 = " mm³";
 		var gr = " gr";
 		var ang = " °";
 		var porc = " %";
@@ -413,8 +413,8 @@
 
 			//RADIO CILINDRO EXTERIOR
 			var rE = diametroEForm / 2;
-			cadena += "RADIO EXTERIOR: " + rE + mm + separador;
-				textPDF2 += "RADIO EXTERIOR: " + rE + mm + separadorPDF;
+			cadena += "RADIO EXTERIOR: " + rE.toFixed(2) + mm + separador;
+				textPDF2 += "RADIO EXTERIOR: " + rE.toFixed(2) + mm + separadorPDF;
 			//RADIO EXTERIOR CUADRADO
 			var rE2 = rE * rE;
 			//VOLUMEN CILINDRO EXTERIOR
@@ -423,8 +423,8 @@
 
 			//RADIO CILINDRO INTERIOR
 			var rI = diametroIForm / 2;
-			cadena += "RADIO INTERIOR: " + rI + mm + separador;
-				textPDF2 += "RADIO INTERIOR: " + rI + mm + separadorPDF;
+			cadena += "RADIO INTERIOR: " + rI.toFixed(2) + mm + separador;
+				textPDF2 += "RADIO INTERIOR: " + rI.toFixed(2) + mm + separadorPDF;
 			//RADIO INTERIOR CUADRADO
 			var rI2 = rI * rI;
 			//VOLUMEN CILINDRO INTERIOR
@@ -438,27 +438,28 @@
 
 			//VOLUMEN TOTAL SIN DIAMANTE
 			var vTSinD = vE - vI;
-			cadena += "VOLUMEN TOTAL SIN DIAMANTE:     " + vTSinD.toFixed(4) + mm3 + separador;
-				textPDF3 += "VOLUMEN TOTAL SIN DIAMANTE:     " + vTSinD.toFixed(4) + mm3 + separadorPDF;
+			cadena += "VOLUMEN TOTAL SIN DIAMANTE: " + vTSinD.toFixed(2) + mm3 + separador;
+				textPDF3 += "VOLUMEN TOTAL SIN DIAMANTE: " + vTSinD.toFixed(2) + mm3 + separadorPDF;
 
 			//CANTIDAD DE DIAMANTE (SE PASA A %)*/
 			var diamante = (diamanteForm * 4.4) / 100;
-			cadena += "PORCENTAJE DE DIAMANTE:     " + diamante + porc + separador;
-				textPDF3 += "PORCENTAJE DE DIAMANTE:     " + diamante + porc + separadorPDF;
+			cadena += "PORCENTAJE DE DIAMANTE: " + diamante.toFixed(2) + porc + separador;
+				textPDF3 += "PORCENTAJE DE DIAMANTE: " + diamante.toFixed(2) + porc + separadorPDF;
 
 			var kilates = (vTSinD * diamante) / 1000;
 
 			var g0 = kilates/5;
 
 			var vD = kilates * d0 * 1000;
-			cadena += "VOLUMEN DIAMANTE:     " + vD.toFixed(4) + mm3 + separador;
-				textPDF3 += "VOLUMEN DIAMANTE:     " + vD.toFixed(4) + mm3 + separadorPDF;
+			cadena += "VOLUMEN DIAMANTE: " + vD.toFixed(2) + mm3 + separador;
+				textPDF3 += "VOLUMEN DIAMANTE: " + vD.toFixed(2) + mm3 + separadorPDF;
 
 			var vTConD = vTSinD - vD;
-			cadena += "VOLUMEN TOTAL CON DIAMANTE:     " + vTConD.toFixed(4)+ mm3 + separador;
-				textPDF3 += "VOLUMEN TOTAL CON DIAMANTE:     " + vTConD.toFixed(4)+ mm3 + separadorPDF;
+			cadena += "VOLUMEN TOTAL CON DIAMANTE: " + vTConD.toFixed(2)+ mm3 + separador;
+				textPDF3 += "VOLUMEN TOTAL CON DIAMANTE: " + vTConD.toFixed(2)+ mm3 + separadorPDF;
 
 			cadena += separador;
+
 
 
 
@@ -473,26 +474,26 @@
 				auxMaterial = document.getElementById("material"+i).value * 1;
 				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0.
 				if (auxMaterial!=0){
-					if(i==1){     m1 = (d1 * vTConD) / 1000;   cadena += material1n+": " + m1.toFixed(4) + separador;  
-						textPDF4 += material1n+": " + m1.toFixed(4) + separadorPDF;}
-					else if(i==2){    m2 = (d2 * vTConD) / 1000;   cadena += material2n+": " + m2.toFixed(4) + separador;  
-						textPDF4 += material2n+": " + m2.toFixed(4) + separadorPDF;}
-					else if(i==3){    m3 = (d3 * vTConD) / 1000;   cadena += material3n+": " + m3.toFixed(4) + separador;  
-						textPDF4 += material3n+": " + m3.toFixed(4) + separadorPDF;}
-					else if(i==4){    m4 = (d4 * vTConD) / 1000;   cadena += material4n+": " + m4.toFixed(4) + separador;  
-						textPDF4 += material4n+": " + m4.toFixed(4) + separadorPDF;}
-					else if(i==5){    m5 = (d5 * vTConD) / 1000;   cadena += material5n+": " + m5.toFixed(4) + separador;  
-						textPDF4 += material5n+": " + m5.toFixed(4) + separadorPDF;}
-					else if(i==6){    m6 = (d6 * vTConD) / 1000;   cadena += material6n+": " + m6.toFixed(4) + separador;  
-						textPDF4 += material6n+": " + m6.toFixed(4) + separadorPDF;}
-					else if(i==7){    m7 = (d7 * vTConD) / 1000;   cadena += material7n+": " + m7.toFixed(4) + separador;  
-						textPDF4 += material7n+": " + m7.toFixed(4) + separadorPDF;}
-					else if(i==8){    m8 = (d8 * vTConD) / 1000;   cadena += material8n+": " + m8.toFixed(4) + separador;  
-						textPDF4 += material8n+": " + m8.toFixed(4) + separadorPDF;}
-					else if(i==9){    m9 = (d9 * vTConD) / 1000;   cadena += material9n+": " + m9.toFixed(4) + separador;  
-						textPDF4 += material9n+": " + m9.toFixed(4) + separadorPDF;}
-					else{       			m10 = (d10 * vTConD) / 1000;   cadena += material10n+": " + m10.toFixed(4) + separador;  
-						textPDF4 += material10n+": " + m10.toFixed(4) + separadorPDF;}
+					if(i==1){     m1 = (d1 * vTConD) / 1000;   cadena += material1n+": " + m1.toFixed(2) + separador;  
+						textPDF4 += material1n+": " + m1.toFixed(2) + separadorPDF;}
+					else if(i==2){    m2 = (d2 * vTConD) / 1000;   cadena += material2n+": " + m2.toFixed(2) + separador;  
+						textPDF4 += material2n+": " + m2.toFixed(2) + separadorPDF;}
+					else if(i==3){    m3 = (d3 * vTConD) / 1000;   cadena += material3n+": " + m3.toFixed(2) + separador;  
+						textPDF4 += material3n+": " + m3.toFixed(2) + separadorPDF;}
+					else if(i==4){    m4 = (d4 * vTConD) / 1000;   cadena += material4n+": " + m4.toFixed(2) + separador;  
+						textPDF4 += material4n+": " + m4.toFixed(2) + separadorPDF;}
+					else if(i==5){    m5 = (d5 * vTConD) / 1000;   cadena += material5n+": " + m5.toFixed(2) + separador;  
+						textPDF4 += material5n+": " + m5.toFixed(2) + separadorPDF;}
+					else if(i==6){    m6 = (d6 * vTConD) / 1000;   cadena += material6n+": " + m6.toFixed(2) + separador;  
+						textPDF4 += material6n+": " + m6.toFixed(2) + separadorPDF;}
+					else if(i==7){    m7 = (d7 * vTConD) / 1000;   cadena += material7n+": " + m7.toFixed(2) + separador;  
+						textPDF4 += material7n+": " + m7.toFixed(2) + separadorPDF;}
+					else if(i==8){    m8 = (d8 * vTConD) / 1000;   cadena += material8n+": " + m8.toFixed(2) + separador;  
+						textPDF4 += material8n+": " + m8.toFixed(2) + separadorPDF;}
+					else if(i==9){    m9 = (d9 * vTConD) / 1000;   cadena += material9n+": " + m9.toFixed(2) + separador;  
+						textPDF4 += material9n+": " + m9.toFixed(2) + separadorPDF;}
+					else{       			m10 = (d10 * vTConD) / 1000;   cadena += material10n+": " + m10.toFixed(2) + separador;  
+						textPDF4 += material10n+": " + m10.toFixed(2) + separadorPDF;}
 				}
 			}
 
@@ -504,43 +505,43 @@
 
 			cadena += negra0 + headPDF5 + negra1 +separador;
 
-			cadena += material0n+"("+diamante+"%): " + g0.toFixed(4) + gr + separador;
-				textPDF5 += material0n+"("+diamante+"%): " + g0.toFixed(4) + gr + separadorPDF;
+			cadena += material0n+"("+diamante+"%): " + g0.toFixed(2) + gr + separador;
+				textPDF5 += material0n+"("+diamante+"%): " + g0.toFixed(2) + gr + separadorPDF;
 
 			for (var i = 1; i <= 10; i++) {
 				auxMaterial = document.getElementById("material"+i).value * 1;
 				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0.
 				if (auxMaterial!=0){
-					if(i==1){     g1 = (auxMaterial * m1) / 100;  cadena += material1n+"("+auxMaterial+"%): " + g1.toFixed(4) + gr + separador;    
-						textPDF5 += material1n+"("+auxMaterial+"%): " + g1.toFixed(4) + gr + separadorPDF;
+					if(i==1){     g1 = (auxMaterial * m1) / 100;  cadena += material1n+"("+auxMaterial+"%): " + g1.toFixed(2) + gr + separador;    
+						textPDF5 += material1n+"("+auxMaterial+"%): " + g1.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "B";}
-					else if(i==2){    g2 = (auxMaterial * m2) / 100;  cadena += material2n+"("+auxMaterial+"%): " + g2.toFixed(4) + gr + separador;    
-						textPDF5 += material2n+"("+auxMaterial+"%): " + g2.toFixed(4) + gr + separadorPDF;
+					else if(i==2){    g2 = (auxMaterial * m2) / 100;  cadena += material2n+"("+auxMaterial+"%): " + g2.toFixed(2) + gr + separador;    
+						textPDF5 += material2n+"("+auxMaterial+"%): " + g2.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "C";}
-					else if(i==3){    g3 = (auxMaterial * m3) / 100;  cadena += material3n+"("+auxMaterial+"%): " + g3.toFixed(4) + gr + separador;    
-						textPDF5 += material3n+"("+auxMaterial+"%): " + g3.toFixed(4) + gr + separadorPDF;
+					else if(i==3){    g3 = (auxMaterial * m3) / 100;  cadena += material3n+"("+auxMaterial+"%): " + g3.toFixed(2) + gr + separador;    
+						textPDF5 += material3n+"("+auxMaterial+"%): " + g3.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "H";}
-					else if(i==4){    g4 = (auxMaterial * m4) / 100;  cadena += material4n+"("+auxMaterial+"%): " + g4.toFixed(4) + gr + separador;    
-						textPDF5 += material4n+"("+auxMaterial+"%): " + g4.toFixed(4) + gr + separadorPDF;
+					else if(i==4){    g4 = (auxMaterial * m4) / 100;  cadena += material4n+"("+auxMaterial+"%): " + g4.toFixed(2) + gr + separador;    
+						textPDF5 += material4n+"("+auxMaterial+"%): " + g4.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "M";}
-					else if(i==5){    g5 = (auxMaterial * m5) / 100;  cadena += material5n+"("+auxMaterial+"%): " + g5.toFixed(4) + gr + separador;    
-						textPDF5 += material5n+"("+auxMaterial+"%): " + g5.toFixed(4) + gr + separadorPDF;
+					else if(i==5){    g5 = (auxMaterial * m5) / 100;  cadena += material5n+"("+auxMaterial+"%): " + g5.toFixed(2) + gr + separador;    
+						textPDF5 += material5n+"("+auxMaterial+"%): " + g5.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "N";}
-					else if(i==6){    g6 = (auxMaterial * m6) / 100;  cadena += material6n+"("+auxMaterial+"%): " + g6.toFixed(4) + gr + separador;    
-						textPDF5 += material6n+"("+auxMaterial+"%): " + g6.toFixed(4) + gr + separadorPDF;
+					else if(i==6){    g6 = (auxMaterial * m6) / 100;  cadena += material6n+"("+auxMaterial+"%): " + g6.toFixed(2) + gr + separador;    
+						textPDF5 += material6n+"("+auxMaterial+"%): " + g6.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "Z";}
-					else if(i==7){     g7 = (auxMaterial * m7) / 100;  cadena += material7n+"("+auxMaterial+"%): " + g7.toFixed(4) + gr + separador;    
-						textPDF5 += material7n+"("+auxMaterial+"%): " + g7.toFixed(4) + gr + separadorPDF;
+					else if(i==7){     g7 = (auxMaterial * m7) / 100;  cadena += material7n+"("+auxMaterial+"%): " + g7.toFixed(2) + gr + separador;    
+						textPDF5 += material7n+"("+auxMaterial+"%): " + g7.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "G";}
 
-					else if(i==8){    g8 = (auxMaterial * m8) / 100;  cadena += material8n+"("+auxMaterial+"%): " + g8.toFixed(4) + gr + separador;    
-						textPDF5 += material8n+"("+auxMaterial+"%): " + g8.toFixed(4) + gr + separadorPDF;
+					else if(i==8){    g8 = (auxMaterial * m8) / 100;  cadena += material8n+"("+auxMaterial+"%): " + g8.toFixed(2) + gr + separador;    
+						textPDF5 += material8n+"("+auxMaterial+"%): " + g8.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "E";}
-					else if(i==9){    g9 = (auxMaterial * m9) / 100;  cadena += material9n+"("+auxMaterial+"%): " + g9.toFixed(4) + gr + separador;    
-						textPDF5 += material9n+"("+auxMaterial+"%): " + g9.toFixed(4) + gr + separadorPDF;
+					else if(i==9){    g9 = (auxMaterial * m9) / 100;  cadena += material9n+"("+auxMaterial+"%): " + g9.toFixed(2) + gr + separador;    
+						textPDF5 += material9n+"("+auxMaterial+"%): " + g9.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "P";}
-					else{      			g10 = (auxMaterial * m10) / 100;  cadena += material10n+"("+auxMaterial+"%): " + g10.toFixed(4) + gr + separador;    
-						textPDF5 += material10n+"("+auxMaterial+"%): " + g10.toFixed(4) + gr + separadorPDF;
+					else{      			g10 = (auxMaterial * m10) / 100;  cadena += material10n+"("+auxMaterial+"%): " + g10.toFixed(2) + gr + separador;    
+						textPDF5 += material10n+"("+auxMaterial+"%): " + g10.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "PH";}
 				}
 			}
@@ -614,89 +615,7 @@
 		$('#modalH').modal('show');
 	}
 
-	function descargar(){
-		var doc = new jsPDF();
-		getCurrentDate();
-
-		
-		//PARTE 0 DEL PDF
-		//COLOR DE FUENTE  (AZUL) (50,80,200)
-			doc.setTextColor(50,80,200);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 50, headPDF0);
-		//COLOR DE FUENTE  (AZUL) (50,80,200)
-			doc.setTextColor(50,80,200);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 55, textPDF0);
-
-		//PARTE 1 DEL PDF
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 84, headPDF1);
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 89, textPDF1);
-
-		//PARTE 2 DEL PDF
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 112, headPDF2);
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 117, textPDF2);
-
-		//PARTE 3 DEL PDF
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 132, headPDF3);
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 137, textPDF3);
-
-		//PARTE 4 DEL PDF
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 160, headPDF4);
-		//COLOR DE FUENTE (NEGRO) (50,50,50)
-			doc.setTextColor(50,50,50);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 165, textPDF4);
-
-		//PARTE 5 DEL PDF
-		//COLOR DE FUENTE  (ROJO) (200,50,80)
-			doc.setTextColor(200,50,80);
-		//TAMAÑO DE FUENTE HEAD
-			doc.setFontSize(16);
-		doc.text(20, 215, headPDF5);
-		//COLOR DE FUENTE  (ROJO) (200,50,80)
-			doc.setTextColor(200,50,80);
-		//TAMAÑO DE FUENTE TEXT
-			doc.setFontSize(10);
-		doc.text(30, 220, textPDF5);
-
-
-		//NOMBRE DEL ARCHIVO
-		doc.save(clientePDF +" - BROCA - "+ medidasPDF + materialesPDF + ".pdf");
-    }
-
-    //VARIABLES PARA LA FECHA
+  //VARIABLES PARA LA FECHA
 	var year;
 	var month;
 	var day;
@@ -717,6 +636,88 @@
       	completeDate = year+"-"+month+"-"+day;
       	completeDateModal = year+"/"+month+"/"+day;
 	}
+
+  function descargar(){
+    var doc = new jsPDF();
+    getCurrentDate();
+
+    
+    //PARTE 0 DEL PDF
+    //COLOR DE FUENTE  (AZUL) (50,80,200)
+      doc.setTextColor(50,80,200);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 50, headPDF0);
+    //COLOR DE FUENTE  (AZUL) (50,80,200)
+      doc.setTextColor(50,80,200);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 55, textPDF0);
+
+    //PARTE 1 DEL PDF
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 84, headPDF1);
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 89, textPDF1);
+
+    //PARTE 2 DEL PDF
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 112, headPDF2);
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 117, textPDF2);
+
+    //PARTE 3 DEL PDF
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 132, headPDF3);
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 137, textPDF3);
+
+    //PARTE 4 DEL PDF
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 160, headPDF4);
+    //COLOR DE FUENTE (NEGRO) (50,50,50)
+      doc.setTextColor(50,50,50);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 165, textPDF4);
+
+    //PARTE 5 DEL PDF
+    //COLOR DE FUENTE  (ROJO) (200,50,80)
+      doc.setTextColor(200,50,80);
+    //TAMAÑO DE FUENTE HEAD
+      doc.setFontSize(16);
+    doc.text(20, 215, headPDF5);
+    //COLOR DE FUENTE  (ROJO) (200,50,80)
+      doc.setTextColor(200,50,80);
+    //TAMAÑO DE FUENTE TEXT
+      doc.setFontSize(10);
+    doc.text(30, 220, textPDF5);
+
+
+    //NOMBRE DEL ARCHIVO
+    doc.save(clientePDF +" - BROCA - "+ medidasPDF + materialesPDF + ".pdf");
+  }
 
     </script>
 
