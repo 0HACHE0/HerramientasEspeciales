@@ -315,29 +315,29 @@
 
 
 		//CONSTANTES
-		var d0 = 0.0571;      //Diamante
-		var material0n = "DIAMANTE";
-		var d1 = 8.5;       //bronce
-		var material1n = "BRONCE";
-		var d2 = 8.9;       //cobalto
-		var material2n = "COBALTO";
-		var d3 = 7.84;      //hierro
-		var material3n = "HIERRO";
-		var d4 = 7.4;       //manganeso
-		var material4n = "MANGANESO";
-		var d5 = 7.68;      //niquel
-		var material5n = "NIQUEL";
-		var d6 = 7.14;      //zinc
-		var material6n = "ZINC";
-		var d7 = 2.25;      //grafito
-		var material7n = "GRAFITO";
+    var d0 = 0.0571;      //Diamante
+    var material0n = "Diamante";
+    var d1 = 8.5;       //bronce
+    var material1n = "Bronce";
+    var d2 = 8.9;       //cobalto
+    var material2n = "Cobalto";
+    var d3 = 7.84;      //hierro
+    var material3n = "Hierro";
+    var d4 = 7.4;       //manganeso
+    var material4n = "Manganeso";
+    var d5 = 7.68;      //niquel
+    var material5n = "Niquel";
+    var d6 = 7.14;      //zinc
+    var material6n = "Zinc";
+    var d7 = 2.25;      //grafito
+    var material7n = "Grafito";
 
-		var d8 = 7.29;      //estaño
-		var material8n = "ESTAÑO";
-		var d9 = 10.49;      //plata
-		var material9n = "PLATA";
-		var d10 = 4.95;      //pirita de hierro
-		var material10n = "PIRITA DE HIERRO";
+    var d8 = 7.29;      //estaño
+    var material8n = "Estaño";
+    var d9 = 10.49;      //plata
+    var material9n = "Plata";
+    var d10 = 4.95;      //pirita de hierro
+    var material10n = "Pirita de hierro";
 
 		if (validaciones() != 1){
 
@@ -347,21 +347,21 @@
       //BROCA O MUELA
       var pieza_radio = document.getElementById("broca1").checked;
       var broca_muela = ""
-      if(pieza_radio==true)     broca_muela="BROCA"
-      else    broca_muela="MUELA"
+      if(pieza_radio==true)     broca_muela="Broca"
+      else    broca_muela="Muela"
 
 			//CLIENTE
 			var clienteForm = document.getElementById("cliente").value.toUpperCase();
 			clientePDF = clienteForm;
-			cadena += "CLIENTE: " + clienteForm + separador;
-				textPDF0 += "CLIENTE: " + clienteForm + separadorPDF;
+			cadena += "Cliente: " + clienteForm + separador;
+				textPDF0 += "Cliente: " + clienteForm + separadorPDF;
 			//FECHA
 			getCurrentDate();
-			cadena += "FECHA: " + completeDateModal + separador;
-				textPDF0 += "FECHA: " + completeDateModal + separadorPDF;
+			cadena += "Fecha: " + completeDateModal + separador;
+				textPDF0 += "Fecha: " + completeDateModal + separadorPDF;
 			//PIEZA
-			cadena += "TIPO DE PIEZA: " + broca_muela + separador;
-				textPDF0 += "TIPO DE PIEZA: " + broca_muela + separadorPDF;
+			cadena += "Pieza: " + broca_muela + separador;
+				textPDF0 += "Pieza: " + broca_muela + separadorPDF;
 
       var mesh_form = document.getElementById("mesh_pieza");
       var mesh_pieza = mesh_form.options[mesh_form.selectedIndex].text;
@@ -372,8 +372,8 @@
       var tipo_form = document.getElementById("tipo_pieza");
       var tipo_pieza = tipo_form.options[tipo_form.selectedIndex].text;
 
-      cadena += "TIPO: " + tipo_pieza + separador;
-        textPDF0 += "TIPO: " + tipo_pieza + separadorPDF;
+      cadena += "Tipo: " + tipo_pieza + separador;
+        textPDF0 += "Tipo: " + tipo_pieza + separadorPDF;
 
 			cadena += separador;
 
@@ -386,20 +386,20 @@
 			//DATOS QUE INGRESA EL USUARIO
 			//DIAMETRO EXTERIOR
 			var diametroEForm = document.getElementById("diametroE").value * 1;
-			cadena += "DIAMETRO EXTERIOR: " + diametroEForm + mm + separador;
-				textPDF1 += "DIAMETRO EXTERIOR: " + diametroEForm + mm + separadorPDF;
+			cadena += "Diametro exterior: " + diametroEForm + mm + separador;
+				textPDF1 += "Diametro exterior: " + diametroEForm + mm + separadorPDF;
 			//DIAMETRO INTERIOR
 			var diametroIForm = document.getElementById("diametroI").value * 1;
-			cadena += "DIAMETRO INTERIOR: " + diametroIForm + mm + separador;
-				textPDF1 += "DIAMETRO INTERIOR: " + diametroIForm + mm + separadorPDF;
+			cadena += "Diametro interior: " + diametroIForm + mm + separador;
+				textPDF1 += "Diametro interior: " + diametroIForm + mm + separadorPDF;
 			//ALTURA
 			var alturaForm = document.getElementById("altura").value * 1;
-			cadena += "ALTURA: " + alturaForm + mm + separador;
-				textPDF1 += "ALTURA: " + alturaForm + mm + separadorPDF;
+			cadena += "Altura: " + alturaForm + mm + separador;
+				textPDF1 += "Altura: " + alturaForm + mm + separadorPDF;
 			//DIAMANTE
 			var diamanteForm = document.getElementById("diamante").value;
-			cadena += "DIAMANTE: " + diamanteForm + separador;
-				textPDF1 += "DIAMANTE: " + diamanteForm + separadorPDF;
+			cadena += "Diamante: " + diamanteForm + separador;
+				textPDF1 += "Diamante: " + diamanteForm + separadorPDF;
 
 
 
@@ -413,8 +413,8 @@
 
 			//RADIO CILINDRO EXTERIOR
 			var rE = diametroEForm / 2;
-			cadena += "RADIO EXTERIOR: " + rE.toFixed(2) + mm + separador;
-				textPDF2 += "RADIO EXTERIOR: " + rE.toFixed(2) + mm + separadorPDF;
+			cadena += "Radio exterior: " + rE.toFixed(2) + mm + separador;
+				textPDF2 += "Radio exterior: " + rE.toFixed(2) + mm + separadorPDF;
 			//RADIO EXTERIOR CUADRADO
 			var rE2 = rE * rE;
 			//VOLUMEN CILINDRO EXTERIOR
@@ -423,8 +423,8 @@
 
 			//RADIO CILINDRO INTERIOR
 			var rI = diametroIForm / 2;
-			cadena += "RADIO INTERIOR: " + rI.toFixed(2) + mm + separador;
-				textPDF2 += "RADIO INTERIOR: " + rI.toFixed(2) + mm + separadorPDF;
+			cadena += "Radio interior: " + rI.toFixed(2) + mm + separador;
+				textPDF2 += "Radio interior: " + rI.toFixed(2) + mm + separadorPDF;
 			//RADIO INTERIOR CUADRADO
 			var rI2 = rI * rI;
 			//VOLUMEN CILINDRO INTERIOR
@@ -438,25 +438,25 @@
 
 			//VOLUMEN TOTAL SIN DIAMANTE
 			var vTSinD = vE - vI;
-			cadena += "VOLUMEN TOTAL SIN DIAMANTE: " + vTSinD.toFixed(2) + mm3 + separador;
-				textPDF3 += "VOLUMEN TOTAL SIN DIAMANTE: " + vTSinD.toFixed(2) + mm3 + separadorPDF;
+			cadena += "Volumen total sin diamante: " + vTSinD.toFixed(2) + mm3 + separador;
+				textPDF3 += "Volumen total sin diamante: " + vTSinD.toFixed(2) + mm3 + separadorPDF;
 
 			//CANTIDAD DE DIAMANTE (SE PASA A %)*/
 			var diamante = (diamanteForm * 4.4) / 100;
-			cadena += "PORCENTAJE DE DIAMANTE: " + diamante.toFixed(2) + porc + separador;
-				textPDF3 += "PORCENTAJE DE DIAMANTE: " + diamante.toFixed(2) + porc + separadorPDF;
+			cadena += "Porcentaje de diamante: " + diamante.toFixed(2) + porc + separador;
+				textPDF3 += "Porcentaje de diamante: " + diamante.toFixed(2) + porc + separadorPDF;
 
 			var kilates = (vTSinD * diamante) / 1000;
 
 			var g0 = kilates/5;
 
 			var vD = kilates * d0 * 1000;
-			cadena += "VOLUMEN DIAMANTE: " + vD.toFixed(2) + mm3 + separador;
-				textPDF3 += "VOLUMEN DIAMANTE: " + vD.toFixed(2) + mm3 + separadorPDF;
+			cadena += "Volumen diamante: " + vD.toFixed(2) + mm3 + separador;
+				textPDF3 += "Volumen diamante: " + vD.toFixed(2) + mm3 + separadorPDF;
 
 			var vTConD = vTSinD - vD;
-			cadena += "VOLUMEN TOTAL CON DIAMANTE: " + vTConD.toFixed(2)+ mm3 + separador;
-				textPDF3 += "VOLUMEN TOTAL CON DIAMANTE: " + vTConD.toFixed(2)+ mm3 + separadorPDF;
+			cadena += "Volumen total con diamante: " + vTConD.toFixed(2)+ mm3 + separador;
+				textPDF3 += "Volumen total con diamante: " + vTConD.toFixed(2)+ mm3 + separadorPDF;
 
 			cadena += separador;
 
@@ -499,49 +499,50 @@
 
 			cadena += separador;
 
-			var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0, g8=0, g9=0, g10=0;
+			
 
 
 
 			cadena += negra0 + headPDF5 + negra1 +separador;
 
-			cadena += material0n+"("+diamante+"%): " + g0.toFixed(2) + gr + separador;
-				textPDF5 += material0n+"("+diamante+"%): " + g0.toFixed(2) + gr + separadorPDF;
+      var g1=0, g2=0, g3=0, g4=0, g5=0, g6=0, g7=0, g8=0, g9=0, g10=0;
+
+			cadena += material0n+" ("+diamante+"%): " + g0.toFixed(2) + gr + separador;
+				textPDF5 += material0n+" ("+diamante+"%): " + g0.toFixed(2) + gr + separadorPDF;
 
 			for (var i = 1; i <= 10; i++) {
 				auxMaterial = document.getElementById("material"+i).value * 1;
 				//VALIDACIÓN SI EL CAMPO DE ESE MATERIAL NO ESTA EN 0.
 				if (auxMaterial!=0){
-					if(i==1){     g1 = (auxMaterial * m1) / 100;  cadena += material1n+"("+auxMaterial+"%): " + g1.toFixed(2) + gr + separador;    
-						textPDF5 += material1n+"("+auxMaterial+"%): " + g1.toFixed(2) + gr + separadorPDF;
+					if(i==1){     g1 = (auxMaterial * m1) / 100;  cadena += material1n+" ("+auxMaterial+"%): " + g1.toFixed(2) + gr + separador;    
+						textPDF5 += material1n+" ("+auxMaterial+"%): " + g1.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "B";}
-					else if(i==2){    g2 = (auxMaterial * m2) / 100;  cadena += material2n+"("+auxMaterial+"%): " + g2.toFixed(2) + gr + separador;    
-						textPDF5 += material2n+"("+auxMaterial+"%): " + g2.toFixed(2) + gr + separadorPDF;
+					else if(i==2){    g2 = (auxMaterial * m2) / 100;  cadena += material2n+" ("+auxMaterial+"%): " + g2.toFixed(2) + gr + separador;    
+						textPDF5 += material2n+" ("+auxMaterial+"%): " + g2.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "C";}
-					else if(i==3){    g3 = (auxMaterial * m3) / 100;  cadena += material3n+"("+auxMaterial+"%): " + g3.toFixed(2) + gr + separador;    
-						textPDF5 += material3n+"("+auxMaterial+"%): " + g3.toFixed(2) + gr + separadorPDF;
+					else if(i==3){    g3 = (auxMaterial * m3) / 100;  cadena += material3n+" ("+auxMaterial+"%): " + g3.toFixed(2) + gr + separador;    
+						textPDF5 += material3n+" ("+auxMaterial+"%): " + g3.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "H";}
-					else if(i==4){    g4 = (auxMaterial * m4) / 100;  cadena += material4n+"("+auxMaterial+"%): " + g4.toFixed(2) + gr + separador;    
-						textPDF5 += material4n+"("+auxMaterial+"%): " + g4.toFixed(2) + gr + separadorPDF;
+					else if(i==4){    g4 = (auxMaterial * m4) / 100;  cadena += material4n+" ("+auxMaterial+"%): " + g4.toFixed(2) + gr + separador;    
+						textPDF5 += material4n+" ("+auxMaterial+"%): " + g4.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "M";}
-					else if(i==5){    g5 = (auxMaterial * m5) / 100;  cadena += material5n+"("+auxMaterial+"%): " + g5.toFixed(2) + gr + separador;    
-						textPDF5 += material5n+"("+auxMaterial+"%): " + g5.toFixed(2) + gr + separadorPDF;
+					else if(i==5){    g5 = (auxMaterial * m5) / 100;  cadena += material5n+" ("+auxMaterial+"%): " + g5.toFixed(2) + gr + separador;    
+						textPDF5 += material5n+" ("+auxMaterial+"%): " + g5.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "N";}
-					else if(i==6){    g6 = (auxMaterial * m6) / 100;  cadena += material6n+"("+auxMaterial+"%): " + g6.toFixed(2) + gr + separador;    
-						textPDF5 += material6n+"("+auxMaterial+"%): " + g6.toFixed(2) + gr + separadorPDF;
+					else if(i==6){    g6 = (auxMaterial * m6) / 100;  cadena += material6n+" ("+auxMaterial+"%): " + g6.toFixed(2) + gr + separador;    
+						textPDF5 += material6n+" ("+auxMaterial+"%): " + g6.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "Z";}
-					else if(i==7){     g7 = (auxMaterial * m7) / 100;  cadena += material7n+"("+auxMaterial+"%): " + g7.toFixed(2) + gr + separador;    
-						textPDF5 += material7n+"("+auxMaterial+"%): " + g7.toFixed(2) + gr + separadorPDF;
+					else if(i==7){     g7 = (auxMaterial * m7) / 100;  cadena += material7n+" ("+auxMaterial+"%): " + g7.toFixed(2) + gr + separador;    
+						textPDF5 += material7n+" ("+auxMaterial+"%): " + g7.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "G";}
-
-					else if(i==8){    g8 = (auxMaterial * m8) / 100;  cadena += material8n+"("+auxMaterial+"%): " + g8.toFixed(2) + gr + separador;    
-						textPDF5 += material8n+"("+auxMaterial+"%): " + g8.toFixed(2) + gr + separadorPDF;
+					else if(i==8){    g8 = (auxMaterial * m8) / 100;  cadena += material8n+" ("+auxMaterial+"%): " + g8.toFixed(2) + gr + separador;    
+						textPDF5 += material8n+" ("+auxMaterial+"%): " + g8.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "E";}
-					else if(i==9){    g9 = (auxMaterial * m9) / 100;  cadena += material9n+"("+auxMaterial+"%): " + g9.toFixed(2) + gr + separador;    
-						textPDF5 += material9n+"("+auxMaterial+"%): " + g9.toFixed(2) + gr + separadorPDF;
+					else if(i==9){    g9 = (auxMaterial * m9) / 100;  cadena += material9n+" ("+auxMaterial+"%): " + g9.toFixed(2) + gr + separador;    
+						textPDF5 += material9n+" ("+auxMaterial+"%): " + g9.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "P";}
-					else{      			g10 = (auxMaterial * m10) / 100;  cadena += material10n+"("+auxMaterial+"%): " + g10.toFixed(2) + gr + separador;    
-						textPDF5 += material10n+"("+auxMaterial+"%): " + g10.toFixed(2) + gr + separadorPDF;
+					else{      			g10 = (auxMaterial * m10) / 100;  cadena += material10n+" ("+auxMaterial+"%): " + g10.toFixed(2) + gr + separador;    
+						textPDF5 += material10n+" ("+auxMaterial+"%): " + g10.toFixed(2) + gr + separadorPDF;
 						materialesPDF += "|" + auxMaterial + "PH";}
 				}
 			}
@@ -633,14 +634,19 @@
      	if (day<10)
           	day = "0"+day;
       
-      	completeDate = year+"-"+month+"-"+day;
-      	completeDateModal = year+"/"+month+"/"+day;
+    	completeDate = day+"-"+month+"-"+year;
+      completeDateModal = day+"/"+month+"/"+year;
 	}
 
   function descargar(){
     var doc = new jsPDF();
     getCurrentDate();
 
+    doc.addImage(imgData, 'JPEG', 35, 10, 28, 28);
+    doc.setTextColor(50,50,50);
+    doc.setFontSize(30);
+    doc.text(85,22," HERRAMIENTAS");
+    doc.text(85,34,"    ESPECIALES");
     
     //PARTE 0 DEL PDF
     //COLOR DE FUENTE  (AZUL) (50,80,200)
@@ -652,73 +658,75 @@
       doc.setTextColor(50,80,200);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 55, textPDF0);
+    doc.text(35, 56, textPDF0);
 
     //PARTE 1 DEL PDF
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE HEAD
       doc.setFontSize(16);
-    doc.text(20, 84, headPDF1);
+    doc.text(20, 82, headPDF1);
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 89, textPDF1);
+    doc.text(35, 88, textPDF1);
 
     //PARTE 2 DEL PDF
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE HEAD
       doc.setFontSize(16);
-    doc.text(20, 112, headPDF2);
+    doc.text(20, 111, headPDF2);
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 117, textPDF2);
+    doc.text(35, 117, textPDF2);
 
     //PARTE 3 DEL PDF
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE HEAD
       doc.setFontSize(16);
-    doc.text(20, 132, headPDF3);
+    doc.text(20, 131, headPDF3);
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 137, textPDF3);
+    doc.text(35, 137, textPDF3);
 
     //PARTE 4 DEL PDF
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE HEAD
       doc.setFontSize(16);
-    doc.text(20, 160, headPDF4);
+    doc.text(20, 159, headPDF4);
     //COLOR DE FUENTE (NEGRO) (50,50,50)
       doc.setTextColor(50,50,50);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 165, textPDF4);
+    doc.text(35, 165, textPDF4);
 
     //PARTE 5 DEL PDF
     //COLOR DE FUENTE  (ROJO) (200,50,80)
       doc.setTextColor(200,50,80);
     //TAMAÑO DE FUENTE HEAD
       doc.setFontSize(16);
-    doc.text(20, 215, headPDF5);
+    doc.text(20, 213, headPDF5);
     //COLOR DE FUENTE  (ROJO) (200,50,80)
       doc.setTextColor(200,50,80);
     //TAMAÑO DE FUENTE TEXT
       doc.setFontSize(10);
-    doc.text(30, 220, textPDF5);
+    doc.text(35, 219, textPDF5);
 
 
     //NOMBRE DEL ARCHIVO
-    doc.save(clientePDF +" - BROCA - "+ medidasPDF + materialesPDF + ".pdf");
+    doc.save(clientePDF + "/BROCA-MUELA/" + completeDate + ".pdf");
   }
 
+
+    var imgData="data:image/jpeg;base64,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" ;
     </script>
 
   </body>
